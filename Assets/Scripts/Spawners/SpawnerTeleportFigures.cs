@@ -26,21 +26,22 @@ public class SpawnerTeleportFigures : SpawnerObjects<TeleporterFigure>
         foreach (Transform spawnPoint in _spawnPoints)
         {
             Color randomColor = ColorPalette.GetRandomActiveColor();
-            SpawnFigure(spawnPoint.position, randomColor);
+            SpawnFigure(spawnPoint, randomColor);
         }
     }
 
-    private void SpawnFigure(Vector3 position, Color color)
+    private void SpawnFigure(Transform position, Color color)
     {
         TeleporterFigure teleporterFigure = Get();
         teleporterFigure.Init(this);
-        teleporterFigure.transform.position = position;
+        teleporterFigure.transform.position = position.position;
+        teleporterFigure.SetSpawnPoint(position.position, position.rotation);
         teleporterFigure.SetColor(color);
-        teleporterFigure.SetSmallSize();
         teleporterFigure.FillListCells(_cells);
-        teleporterFigure.SetSpawnPoint(position);
         teleporterFigure.DisableDetector();
         teleporterFigure.ResetStatusRemove();
+        teleporterFigure.SetSmallSize();
+        teleporterFigure.SetStatusInstall();
 
         _currentFigureCount++;
     }

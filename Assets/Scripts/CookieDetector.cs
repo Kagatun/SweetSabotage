@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookieDispenser : MonoBehaviour
+public class CookieDetector : MonoBehaviour
 {
     private List<TeleporterFigure> _figures = new List<TeleporterFigure>();
     private List<Cookie> _cookies = new List<Cookie>();
@@ -48,15 +48,24 @@ public class CookieDispenser : MonoBehaviour
 
     private void DetermineShapeForCookie()
     {
-        foreach (var figure in _figures.ToArray())
+        List<TeleporterFigure> figuresToRemove = new List<TeleporterFigure>();
+        List<Cookie> cookiesToRemove = new List<Cookie>();
+
+        foreach (var figure in _figures)
         {
             var storage = figure.CookieStorage;
 
-            //if (storage == null || !storage.HasFreePoint())
-            //    continue;
-
-            foreach (var cookie in _cookies.ToArray())
+            if (storage.ISHoldersFilled())
             {
+                figuresToRemove.Add(figure);
+                continue;
+            }
+
+            foreach (var cookie in _cookies)
+            {
+                if (cookiesToRemove.Contains(cookie))
+                    continue;
+
                 if (cookie.Color == figure.Color)
                 {
                     var freePoint = storage.GetFreePoint();
@@ -65,18 +74,20 @@ public class CookieDispenser : MonoBehaviour
                     {
                         freePoint.Reserve();
                         cookie.SetTarget(freePoint);
-                        _cookies.Remove(cookie);
-                        //break;
+                        cookiesToRemove.Add(cookie);
                     }
                 }
             }
+        }
 
-            if (storage.ISHoldersFilled())
-            {
-                _figures.Remove(figure);
-                figure.Used -= OnAddFigure;
-                figure.Remove();
-            }
+        foreach (var cookie in cookiesToRemove)
+            _cookies.Remove(cookie);
+
+        foreach (var figure in figuresToRemove)
+        {
+            figure.Used -= OnAddFigure;
+            figure.Remove();
+            _figures.Remove(figure);
         }
     }
 }

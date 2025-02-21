@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +14,7 @@ public class CellDetector : MonoBehaviour
     private int _numberSections;
 
     public IReadOnlyList<Cell> DetectedCells => _detectedCells;
-    public Cell FirstDetectedCell => _detectedCells.Count > 0 ? _detectedCells[0] : null;
+    public Cell FirstDetectedCell => _detectedCells[0];
 
     private void Awake()
     {

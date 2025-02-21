@@ -19,7 +19,7 @@ public class MoverCookie : MonoBehaviour
     {
         _targetTransform = positionTarget;
 
-        float minDistanceToTargetSqr = 0.29f;
+        float minDistanceToTargetSqr = 0.4f;
         int flightAltitude = 1;
 
         Vector3 direction = (_targetTransform.position - transform.position);

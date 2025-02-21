@@ -445,7 +445,7 @@ Transform:
   m_GameObject: {fileID: 148009945}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0, z: -11.24}
+  m_LocalPosition: {x: -0.85, y: 0, z: -11.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -595,7 +595,7 @@ Transform:
   m_GameObject: {fileID: 478760167}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: 0, z: -11.24}
+  m_LocalPosition: {x: 0.85, y: 0, z: -11.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1305,9 +1305,6 @@ MonoBehaviour:
   - {fileID: 585048305162048151, guid: f2e1d163d16b5a44b9ac4c4206a378d7, type: 3}
   _spawnPoints:
   - {fileID: 750774526}
-  - {fileID: 148009946}
-  - {fileID: 478760168}
-  - {fileID: 706218927}
 --- !u!1 &1215140435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1534,6 @@ GameObject:
   - component: {fileID: 1465050326}
   - component: {fileID: 1465050322}
   - component: {fileID: 1465050321}
-  - component: {fileID: 1465050327}
   m_Layer: 0
   m_Name: CookieDispenser
   m_TagString: Untagged
@@ -1670,19 +1666,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1465050327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465050320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f24b464df3831f84ca5cb5660c7a3b00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cookieDispenser: {fileID: 1465050321}
 --- !u!1 &1518859464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,7 +1747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _colorData:
   - color: {r: 1, g: 1, b: 1, a: 0}
-    isActive: 0
+    isActive: 1
   - color: {r: 0.74132967, g: 0, b: 1, a: 0}
     isActive: 0
   - color: {r: 0, g: 0.26041698, b: 1, a: 0}
@@ -1772,9 +1755,9 @@ MonoBehaviour:
   - color: {r: 0.102742985, g: 0.764151, b: 0, a: 0}
     isActive: 1
   - color: {r: 0.93450093, g: 1, b: 0, a: 0}
-    isActive: 1
+    isActive: 0
   - color: {r: 1, g: 0, b: 0, a: 0}
-    isActive: 1
+    isActive: 0
 --- !u!1 &1623224536
 GameObject:
   m_ObjectHideFlags: 0

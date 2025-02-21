@@ -34,6 +34,7 @@ public class TeleporterFigure : MonoBehaviour
         EnableDetector();
         ClearCells();
         _storage.Clear();
+        ResetPosition();
         _poolAdder.AddToPool(this);
     }
 
@@ -55,6 +56,9 @@ public class TeleporterFigure : MonoBehaviour
     public void EnableDetector() =>
         _cellDetector.enabled = true;
 
+    public void SetStatusInstall() =>
+        IsInstall = false;
+
     public void DisableDetector() =>
         _cellDetector.enabled = false;
 
@@ -70,16 +74,16 @@ public class TeleporterFigure : MonoBehaviour
         transform.Rotate(0, degreeRotation, 0);
     }
 
-    public void SetSpawnPoint(Vector3 startPosition)
+    public void SetSpawnPoint(Vector3 startPosition, Quaternion rotation)
     {
         _startPosition = startPosition;
-        _startRotation = transform.rotation;
+        _startRotation = rotation;
     }
 
     public void SetStandardSize()
     {
         transform.localScale = _startSize;
-        _startRotation = transform.rotation;
+        //_startRotation = transform.rotation;
     }
 
     public void SetStatusRemove() =>

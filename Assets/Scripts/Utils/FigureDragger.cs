@@ -48,11 +48,14 @@ public class FigureDragger : MonoBehaviour
         {
             if (hit.transform.TryGetComponent(out TeleporterFigure figure))
             {
-                _figure = figure;
-                _isDragging = true;
-                _figure.SetStandardSize();
-                _figure.EnableDetector();
-                _offset = _figure.transform.position - hit.point;
+                if (figure.IsInstall == false)
+                {
+                    _figure = figure;
+                    _isDragging = true;
+                    _figure.SetStandardSize();
+                    _figure.EnableDetector();
+                    _offset = _figure.transform.position - hit.point;
+                }
             }
         }
     }

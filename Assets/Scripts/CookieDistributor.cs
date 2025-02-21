@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookieSender : MonoBehaviour
+public class CookieDistributor : MonoBehaviour
 {
-    [SerializeField] private CookieDispenser _cookieDispenser;
+    [SerializeField] private CookieDetector _cookieDispenser;
 
     //private void OnTriggerEnter(Collider other)
-    //{
+    //{CookieDistributor
     //    if (other.gameObject.TryGetComponent(out Cookie cookie))
     //    {
     //        cookie.EnableMover();
