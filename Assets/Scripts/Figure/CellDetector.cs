@@ -1,25 +1,34 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CellDetector : MonoBehaviour
 {
-    private List<Transform> _points = new List<Transform>();
+    [SerializeField] private List<Transform> _checkerPoints;
+
     private List<Cell> _cells = new List<Cell>();
     private List<Cell> _detectedCells = new List<Cell>();
     private List<Cell> _previouslyDetectedCells = new List<Cell>();
+
     private Color _color;
     private float _detectionRadius = 0.6f;
+    private int _numberSections;
 
     public IReadOnlyList<Cell> DetectedCells => _detectedCells;
     public Cell FirstDetectedCell => _detectedCells.Count > 0 ? _detectedCells[0] : null;
+
+    private void Awake()
+    {
+        _numberSections = _checkerPoints.Count;
+    }
 
     private void Update()
     {
         _detectedCells.Clear();
 
-        for (int i = 0; i < _points.Count; i++)
+        for (int i = 0; i < _checkerPoints.Count; i++)
         {
-            Transform point = _points[i];
+            Transform point = _checkerPoints[i];
             Cell closestCell = FindClosestCell(point.position);
 
             if (closestCell != null)
@@ -72,8 +81,14 @@ public class CellDetector : MonoBehaviour
         }
     }
 
-    public void FillPoints(List<Transform> points) =>
-        _points.AddRange(points);
+    public void ClearCells()
+    {
+        foreach (var cell in _cells)
+        {
+            cell.ResetColor();
+            cell.UnReserve();
+        }
+    }
 
     public void SetColor(Color color) =>
         _color = color;
@@ -87,5 +102,19 @@ public class CellDetector : MonoBehaviour
             cell.ResetColor();
 
         _previouslyDetectedCells.Clear();
+    }
+
+    public bool CanInstall()
+    {
+        if (DetectedCells.Count != _numberSections)
+            return false;
+
+        foreach (var cell in DetectedCells)
+        {
+            if (cell.IsBusy)
+                return false;
+        }
+
+        return true;
     }
 }

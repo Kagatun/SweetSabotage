@@ -12,6 +12,7 @@ public class SpawnerTeleportFigures : SpawnerObjects<TeleporterFigure>
     {
         base.OnGet(teleporterFigure);
         teleporterFigure.Used += OnFillShapes;
+        teleporterFigure.SetStandardSize();
     }
 
     protected override void OnRelease(TeleporterFigure teleporterFigure)
@@ -39,6 +40,7 @@ public class SpawnerTeleportFigures : SpawnerObjects<TeleporterFigure>
         teleporterFigure.FillListCells(_cells);
         teleporterFigure.SetSpawnPoint(position);
         teleporterFigure.DisableDetector();
+        teleporterFigure.ResetStatusRemove();
 
         _currentFigureCount++;
     }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,18 +8,17 @@ public class SpawnerCookies : SpawnerObjects<Cookie>
 
     private readonly int MaxCookieCount = 35;
 
-    private Coroutine _spawnCoroutine;
-    private int _currentSpawnIndex = 0;
     private int _currentCookieCount = 0;
-    private WaitForSeconds _wait;
+    private float _nextSpawnTime;
+    private bool _isSpawning = false;
 
     private void Start()
     {
-        _wait = new WaitForSeconds(_spawnDelay);
+        _nextSpawnTime = Time.time + _spawnDelay;
     }
 
     public void StartSpawn() =>
-        StartSpawningIfNeeded();
+        _isSpawning = true;
 
     protected override void OnRelease(Cookie cookie)
     {
@@ -28,44 +26,30 @@ public class SpawnerCookies : SpawnerObjects<Cookie>
         cookie.Cleaned -= OnCookieCleaned;
     }
 
-    private IEnumerator SpawnCookiesRoutine()
+    private void Update()
     {
-        while (_currentCookieCount < MaxCookieCount)
+        if (_isSpawning && _currentCookieCount < MaxCookieCount && Time.time >= _nextSpawnTime)
         {
             Transform spawnPoint = GetNextSpawnPoint();
             Color randomColor = ColorPalette.GetRandomActiveColor();
 
-            SpawnCookie(spawnPoint.position, randomColor);
+            SpawnCookie(spawnPoint.position, spawnPoint.rotation, randomColor);
 
-            yield return _wait;
+            _nextSpawnTime = Time.time + _spawnDelay;
         }
-
-        StopSpawn();
     }
 
-    private void StopSpawn()
+    private Transform GetNextSpawnPoint() =>
+         _spawnPoints[Random.Range(0, _spawnPoints.Count)];
+
+    private void SpawnCookie(Vector3 position, Quaternion rotation, Color color)
     {
-        if (_spawnCoroutine != null)
-            StopCoroutine(_spawnCoroutine);
-    }
-
-    private Transform GetNextSpawnPoint()
-    {
-        Transform spawnPoint = _spawnPoints[_currentSpawnIndex];
-        _currentSpawnIndex = (_currentSpawnIndex + 1) % _spawnPoints.Count;
-
-        return spawnPoint;
-    }
-
-    private void SpawnCookie(Vector3 position, Color color)
-    {
-        if (_currentCookieCount >= MaxCookieCount)
-            return;
-
         Cookie cookie = Get();
         cookie.Init(this);
         cookie.transform.position = position;
+        cookie.transform.rotation = rotation;
         cookie.SetColor(color);
+        cookie.DisableMover();
         cookie.PushStart();
 
         cookie.Cleaned += OnCookieCleaned;
@@ -73,15 +57,6 @@ public class SpawnerCookies : SpawnerObjects<Cookie>
         _currentCookieCount++;
     }
 
-    private void OnCookieCleaned()
-    {
+    private void OnCookieCleaned() =>
         _currentCookieCount--;
-        StartSpawningIfNeeded();
-    }
-
-    private void StartSpawningIfNeeded()
-    {
-        if (_currentCookieCount < MaxCookieCount)
-            _spawnCoroutine = StartCoroutine(SpawnCookiesRoutine());
-    }
 }

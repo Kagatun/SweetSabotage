@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class FigureDragger : MonoBehaviour
@@ -11,8 +10,6 @@ public class FigureDragger : MonoBehaviour
     private bool _isDragging = false;
     private int _offsetY = 1;
     private Vector3 _offset;
-
-    public event Action Activated;
 
     private void Awake()
     {
@@ -32,7 +29,7 @@ public class FigureDragger : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            if (_figure != null && _figure.isInstall == false)
+            if (_figure != null && _figure.IsInstall == false)
             {
                 Vector3 newPosition = hit.point + _offset;
                 newPosition.y = _offsetY;
@@ -66,7 +63,13 @@ public class FigureDragger : MonoBehaviour
         {
             _figure.InstallPanelInCells();
 
-            if (_figure.isInstall == false)
+            if (_figure.IsRemove)
+            {
+                _figure.Use();
+                _figure.Remove();
+            }
+
+            if (_figure.IsInstall == false && _figure != null)
             {
                 _figure.SetSmallSize();
                 _figure.ResetPosition();

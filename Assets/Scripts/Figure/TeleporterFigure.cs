@@ -4,36 +4,41 @@ using UnityEngine;
 
 public class TeleporterFigure : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _points;
-
-    private List<Cell> _cells;
-    private IPoolAdder<TeleporterFigure> _poolAdder;
-    private Vector3 _startSize;
+    private CookieStorage _storage;
     private CellDetector _cellDetector;
     private MeshRenderer _render;
-    private int _numberSections;
+
+    private IPoolAdder<TeleporterFigure> _poolAdder;
+
+    private Vector3 _startSize;
     private Vector3 _startPosition;
     private Quaternion _startRotation;
 
     public event Action Used;
 
     public Color Color => _render.material.color;
-    public bool isInstall { get; private set; }
+    public bool IsInstall { get; private set; }
+    public bool IsRemove { get; private set; }
+    public CookieStorage CookieStorage => _storage;
 
     private void Awake()
     {
+        _storage = GetComponent<CookieStorage>();
         _cellDetector = GetComponent<CellDetector>();
-        _cellDetector.FillPoints(_points);
         _render = GetComponent<MeshRenderer>();
         _startSize = transform.localScale;
-        _numberSections = _points.Count;
     }
 
     public void Remove()
     {
+        EnableDetector();
+        ClearCells();
+        _storage.Clear();
         _poolAdder.AddToPool(this);
-        Used?.Invoke();
     }
+
+    public void Use() =>
+          Used?.Invoke();
 
     public void Init(IPoolAdder<TeleporterFigure> poolAdder) =>
         _poolAdder = poolAdder;
@@ -44,17 +49,14 @@ public class TeleporterFigure : MonoBehaviour
         transform.localScale /= divider;
     }
 
-    public void FillListCells(List<Cell> cells)
-    {
-        _cells = cells;
-        _cellDetector.FillListCells(_cells);
-    }
+    public void FillListCells(List<Cell> cells) =>
+        _cellDetector.FillListCells(cells);
 
     public void EnableDetector() =>
         _cellDetector.enabled = true;
 
     public void DisableDetector() =>
-    _cellDetector.enabled = false;
+        _cellDetector.enabled = false;
 
     public void ResetPosition()
     {
@@ -74,8 +76,17 @@ public class TeleporterFigure : MonoBehaviour
         _startRotation = transform.rotation;
     }
 
-    public void SetStandardSize() =>
-            transform.localScale = _startSize;
+    public void SetStandardSize()
+    {
+        transform.localScale = _startSize;
+        _startRotation = transform.rotation;
+    }
+
+    public void SetStatusRemove() =>
+            IsRemove = true;
+
+    public void ResetStatusRemove() =>
+            IsRemove = false;
 
     public void SetColor(Color color)
     {
@@ -85,29 +96,18 @@ public class TeleporterFigure : MonoBehaviour
 
     public void InstallPanelInCells()
     {
-        if (CanInstall())
+        if (_cellDetector.CanInstall())
         {
             foreach (var cell in _cellDetector.DetectedCells)
                 cell.Reserve();
 
-            isInstall = true;
+            IsInstall = true;
             SetStandardSize();
             transform.position = _cellDetector.FirstDetectedCell.transform.position;
-            Used?.Invoke();
+            Use();
         }
     }
 
-    private bool CanInstall()
-    {
-        if (_cellDetector.DetectedCells.Count != _numberSections)
-            return false;
-
-        foreach (var cell in _cellDetector.DetectedCells)
-        {
-            if (cell.IsBusy)
-                return false;
-        }
-
-        return true;
-    }
+    private void ClearCells() =>
+    _cellDetector.ClearCells();
 }
