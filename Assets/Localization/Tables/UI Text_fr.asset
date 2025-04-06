@@ -1,0 +1,334 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 3f356df5ce6e23c46be294ed39c22954, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 13298048163840
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16264935235584
+    m_Localized: "Param\xE8tres"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22663186604032
+    m_Localized: Jouer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24380045254656
+    m_Localized: Boutique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29121919836160
+    m_Localized: "S\xE9lection du niveau"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 452755641589760
+    m_Localized: "Bienvenue dans notre entreprise \xAB Douceur en Joie \xBB !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453584012435456
+    m_Localized: "Nous sommes sp\xE9cialis\xE9s dans le transport des cookies les
+      plus d\xE9licieux de la galaxie !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453941769789440
+    m_Localized: "En tant que notre employ\xE9, vous occupez un poste tr\xE8s important,
+      en r\xE9gulant diverses formes de t\xE9l\xE9portation en fonction de la couleur
+      des cookies."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 454442703904768
+    m_Localized: "D\xE9placez les formes sur les cellules en maintenant"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455084558245888
+    m_Localized: Pour faire pivoter la forme, maintenez-la
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455484006981632
+    m_Localized: S'il n'y a pas de forme correspondante par couleur ou forme, appuyez
+      dessus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456630155075584
+    m_Localized: "Surveillez le chronom\xE8tre, l'essentiel est de terminer avant
+      qu'il ne soit rempli ! Nous n'avons pas besoin d'avis clients en col\xE8re
+      !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457224710250496
+    m_Localized: "La jauge \"Cookies envoy\xE9s\" doit \xEAtre remplie : plus la
+      forme est grande, plus le progr\xE8s est rapide. Parall\xE8lement, la jauge
+      de temps diminue, vous offrant plus de temps pour agir."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457735966547968
+    m_Localized: "Supprimer une forme sur le panneau entra\xEEnera une p\xE9nalit\xE9
+      d'une seconde si la couleur ne correspond pas \xE0 la derni\xE8re forme supprim\xE9e."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458173847691264
+    m_Localized: "Attention ! Des oies extraterrestres volent parfois pour voler
+      nos cookies ! Elles attrapent ceux en bordure qui correspondent \xE0 leur couleur,
+      et vous subirez une p\xE9nalit\xE9 de temps."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458678510542848
+    m_Localized: "Les oies peuvent \xEAtre \xE9tourdies pendant cinq secondes en
+      cliquant dessus."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459054928355328
+    m_Localized: L'entreprise compte sur vous ! Merci pour votre travail et bonne
+      chance !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1491616509452288
+    m_Localized: "C'est mon premier projet dans cette profession. J'esp\xE8re que
+      vous aimerez ce jeu. J'ai essay\xE9 de le rendre aussi int\xE9ressant et vari\xE9
+      que possible pour vous.\r\n\r\nR\xE8gles :\r\nPlacez les formes sur les cellules
+      en fonction de la couleur du cookie le plus proche sur le convoyeur. Surveillez
+      le temps. Et ne laissez pas les oies prendre vos friandises.\r\n\r\nAuteur
+      du jeu : Ponitskiy Sergey Sergeevich\r\n\r\nMerci \xE0 l'\xE9cole en ligne
+      YaJunior pour l'enseignement du d\xE9veloppement de jeux.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1809592202813440
+    m_Localized: Victoire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811756740501504
+    m_Localized: "D\xE9faite"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2163186223538176
+    m_Localized: Acheter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2165712754827264
+    m_Localized: "D\xE9sactiver les publicit\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3020197744074752
+    m_Localized: "Les ventes de cookies augmentent, et la peinture vous aidera \xE0
+      faire votre travail de mani\xE8re plus qualitative. Faites glisser le rouleau
+      sur les formes situ\xE9es sur le panneau. La couleur est toujours al\xE9atoire.
+      Temps de recharge : 10 secondes. De plus, vous pouvez r\xE9initialiser la couleur
+      de la m\xEAme mani\xE8re que vous supprimez les formes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3023815209639936
+    m_Localized: "Les oies ont commenc\xE9 \xE0 utiliser des amplificateurs ! Soyez
+      plus attentif !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025513563021312
+    m_Localized: Augmente la vitesse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025833793937408
+    m_Localized: Change la couleur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3028883443015680
+    m_Localized: Change la direction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3037934595858432
+    m_Localized: "La cellule noire est une cellule cass\xE9e. Vous ne pouvez pas
+      y placer une forme."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3047601568997376
+    m_Localized: "Les cellules color\xE9es sont des cellules obligatoires. Vous devez
+      t\xE9l\xE9porter des cookies \xE0 partir d'elles au moins une fois avant la
+      fin du niveau."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5485797607202816
+    m_Localized: "Pour faire pivoter la forme, maintenez-la et appuyez n'importe
+      o\xF9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5486866471051264
+    m_Localized: "S\u2019il n\u2019y a pas de forme correspondante par couleur ou
+      forme, maintenez une touche n\u2019importe o\xF9 et appuyez pour supprimer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5936307288137728
+    m_Localized: Classement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8681844965892096
+    m_Localized: "Permet de d\xE9placer les formes et les peintures en les glissant
+      sur le c\xF4t\xE9 lors du maintien. Utilis\xE9 sur les appareils mobiles."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682333581336576
+    m_Localized: "R\xE9initialiser les param\xE8tres par d\xE9faut"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058288090996736
+    m_Localized: "Augmente la dur\xE9e d'\xE9tourdissement des oies"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058694154149888
+    m_Localized: "\xC9tourdissement des oies + 2 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059428564197376
+    m_Localized: "\xC9tourdissement des oies + 4 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059815077699584
+    m_Localized: "\xC9tourdissement des oies + 6 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060122159472640
+    m_Localized: "\xC9tourdissement des oies + 8 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060401219100672
+    m_Localized: "\xC9tourdissement des oies + 10 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060796708413440
+    m_Localized: "R\xE9duit le temps de rechargement d'encre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9061920853188608
+    m_Localized: Recharge d'encre -1 seconde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9063570519089152
+    m_Localized: Recharge d'encre -2 secondes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064009381699584
+    m_Localized: Recharge d'encre -3 secondes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064355357253632
+    m_Localized: "Recharge d'encre -4 secondes\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064692935811072
+    m_Localized: Recharge d'encre -5 secondes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9065247766732800
+    m_Localized: "Donne une chance d'\xE9viter l'accumulation du temps de p\xE9nalit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066286163156992
+    m_Localized: "Chance d'\xE9viter le temps de p\xE9nalit\xE9 \u2014 10%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066673792344064
+    m_Localized: "Chance d'\xE9viter le temps de p\xE9nalit\xE9 \u2014 20%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068014367399936
+    m_Localized: "Chance d'\xE9viter le temps de p\xE9nalit\xE9 \u2014 30%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068453984985088
+    m_Localized: "Chance d'\xE9viter le temps de p\xE9nalit\xE9 \u2014 40%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068922908172288
+    m_Localized: "Chance d'\xE9viter le temps de p\xE9nalit\xE9 \u2014 50%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069254811836416
+    m_Localized: "Augmente la quantit\xE9 totale d'or"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069708564226048
+    m_Localized: "Quantit\xE9 totale d'or +7%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076065812078592
+    m_Localized: "Quantit\xE9 totale d'or +14%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076401989738496
+    m_Localized: "Quantit\xE9 totale d'or +21%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076783033868288
+    m_Localized: "Quantit\xE9 totale d'or +28%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077061346910208
+    m_Localized: "Quantit\xE9 totale d'or +35%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077479162503168
+    m_Localized: "Augmente la dur\xE9e maximale du minuteur"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077847787298816
+    m_Localized: "Dur\xE9e maximale du minuteur +5 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078367537061888
+    m_Localized: "Dur\xE9e maximale du minuteur +10 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078762615332864
+    m_Localized: "Dur\xE9e maximale du minuteur +15 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079099564744704
+    m_Localized: "Dur\xE9e maximale du minuteur +20 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079404461285376
+    m_Localized: "Dur\xE9e maximale du minuteur +25 secondes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079770414309376
+    m_Localized: "Offre une chance de r\xE9duire davantage le temps pour la figure
+      t\xE9l\xE9port\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9080725541216256
+    m_Localized: "Chance de r\xE9duire la dur\xE9e du minuteur +7%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081301322686464
+    m_Localized: "Chance de r\xE9duire la dur\xE9e du minuteur +14%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081609931186176
+    m_Localized: "Chance de r\xE9duire la dur\xE9e du minuteur +21%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081962324025344
+    m_Localized: "Chance de r\xE9duire la dur\xE9e du minuteur +28%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9082351781928960
+    m_Localized: "Chance de r\xE9duire la dur\xE9e du minuteur +35%"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

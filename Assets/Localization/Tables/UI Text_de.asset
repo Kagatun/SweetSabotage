@@ -1,0 +1,330 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 3f356df5ce6e23c46be294ed39c22954, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 13298048163840
+    m_Localized: "Men\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16264935235584
+    m_Localized: Einstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22663186604032
+    m_Localized: Spielen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24380045254656
+    m_Localized: Shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29121919836160
+    m_Localized: Levelauswahl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 452755641589760
+    m_Localized: "Willkommen in unserem Unternehmen \u201ES\xFC\xDFe in Freude\u201C!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453584012435456
+    m_Localized: Wir sind spezialisiert auf den Transport der leckersten Kekse der
+      Galaxie!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453941769789440
+    m_Localized: Als unser Mitarbeiter bekleiden Sie eine sehr wichtige Position
+      und regulieren verschiedene Teleportationsformen entsprechend der Farbe der
+      Kekse.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 454442703904768
+    m_Localized: "Bewegen Sie Formen auf Zellen, w\xE4hrend Sie gedr\xFCckt halten"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455084558245888
+    m_Localized: Um die Form zu drehen, halten Sie sie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455484006981632
+    m_Localized: Wenn keine passende Form in Farbe oder Form vorhanden ist, tippen
+      Sie darauf.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456630155075584
+    m_Localized: "Behalten Sie den Timer im Auge, das Wichtigste ist, fertig zu werden,
+      bevor er voll ist! Wir brauchen keine w\xFCtenden Kundenbewertungen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457224710250496
+    m_Localized: "Die \"Kekse verschickt\"-Anzeige muss gef\xFCllt werden: Je gr\xF6\xDFer
+      die Form, desto schneller der Fortschritt. Gleichzeitig verringert sich die
+      Zeit-Anzeige, was Ihnen mehr Spielraum gibt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457735966547968
+    m_Localized: "Das L\xF6schen einer Form auf dem Panel f\xFChrt zu einer einsek\xFCndigen
+      Strafe, wenn die Farbe nicht mit der zuletzt gel\xF6schten Form \xFCbereinstimmt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458173847691264
+    m_Localized: "Vorsicht! Au\xDFerirdische G\xE4nse klauen gelegentlich Kekse!
+      Sie schnappen von Randplattformen welche ihrer Farbe entsprechen, was eine
+      Zeitstrafe ausl\xF6st."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458678510542848
+    m_Localized: "Die G\xE4nse k\xF6nnen durch Anklicken f\xFCr f\xFCnf Sekunden
+      bet\xE4ubt werden."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459054928355328
+    m_Localized: "Das Unternehmen verl\xE4sst sich auf Sie! Danke f\xFCr Ihre Arbeit
+      und viel Gl\xFCck!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1491616509452288
+    m_Localized: "Dies ist mein erstes Projekt in diesem Beruf. Ich hoffe, euch gef\xE4llt
+      dieses Spiel. Ich habe versucht, es so interessant und abwechslungsreich wie
+      m\xF6glich zu gestalten.\r\n\r\nRegeln:\r\nPlatziere die Formen auf den Zellen
+      entsprechend der Farbe des n\xE4chsten Kekses auf dem F\xF6rderband. Achte
+      auf die Zeit. Und lass nicht zu, dass die G\xE4nse deine Leckereien stehlen.\r\n\r\nSpielautor:
+      Ponitskiy Sergey Sergeevich\r\n\r\nDanke an die Online-Schule YaJunior f\xFCr
+      die Ausbildung in der Spieleentwicklung."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1809592202813440
+    m_Localized: Sieg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811756740501504
+    m_Localized: Niederlage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2163186223538176
+    m_Localized: Kaufen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2165712754827264
+    m_Localized: Werbung deaktivieren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3020197744074752
+    m_Localized: "Der Verkauf von Keksen steigt, und die Farbe hilft Ihnen, Ihre
+      Arbeit besser zu erledigen. Ziehen Sie die Rolle auf die Formen auf dem Panel.
+      Die Farbe ist immer zuf\xE4llig. Aufladezeit: 10 Sekunden. Zus\xE4tzlich k\xF6nnen
+      Sie die Farbe auf die gleiche Weise zur\xFCcksetzen, wie Sie Formen l\xF6schen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3023815209639936
+    m_Localized: "Die G\xE4nse haben Verst\xE4rker angefangen zu benutzen! Seien
+      Sie vorsichtiger!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025513563021312
+    m_Localized: "Erh\xF6ht die Geschwindigkeit"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025833793937408
+    m_Localized: "\xC4ndert die Farbe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3028883443015680
+    m_Localized: "\xC4ndert die Richtung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3037934595858432
+    m_Localized: "Die schwarze Zelle ist eine defekte Zelle. Sie k\xF6nnen keine
+      Form darauf platzieren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3047601568997376
+    m_Localized: "Farbige Zellen sind Pflichtzellen. Sie m\xFCssen mindestens einmal
+      vor Ende des Levels Kekse von ihnen teleportieren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5485797607202816
+    m_Localized: Um die Form zu drehen, halten Sie sie und tippen Sie irgendwo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5486866471051264
+    m_Localized: "Wenn keine passende Form in Farbe oder Form existiert, halten Sie
+      eine Ber\xFChrung irgendwo und tippen Sie zum L\xF6schen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5936307288137728
+    m_Localized: Bestenliste
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8681844965892096
+    m_Localized: "Hilft beim Bewegen von Formen und Farben, indem sie bei gedr\xFCckter
+      Haltung seitlich verschoben werden. F\xFCr Mobilger\xE4te."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682333581336576
+    m_Localized: "Auf Standardeinstellungen zur\xFCcksetzen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058288090996736
+    m_Localized: "Erh\xF6ht die Bet\xE4ubungsdauer der G\xE4nse"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058694154149888
+    m_Localized: "Bet\xE4ubung von G\xE4nsen + 2 Sekunden\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059428564197376
+    m_Localized: "Bet\xE4ubung von G\xE4nsen + 4 Sekunden"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059815077699584
+    m_Localized: "Bet\xE4ubung von G\xE4nsen + 6 Sekunden"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060122159472640
+    m_Localized: "Bet\xE4ubung von G\xE4nsen + 8 Sekunden"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060401219100672
+    m_Localized: "Bet\xE4ubung von G\xE4nsen + 10 Sekunden"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060796708413440
+    m_Localized: "Verk\xFCrzt die Nachladefrist f\xFCr Tinte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9061920853188608
+    m_Localized: Tintennachladen -1 Sekunde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9063570519089152
+    m_Localized: Tintennachladen -2 Sekunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064009381699584
+    m_Localized: Tintennachladen -3 Sekunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064355357253632
+    m_Localized: Tintennachladen -4 Sekunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064692935811072
+    m_Localized: Tintennachladen -5 Sekunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9065247766732800
+    m_Localized: "Gibt eine Chance, die Anh\xE4ufung von Strafzeit zu vermeiden"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066286163156992
+    m_Localized: "Chance, Strafzeit zu vermeiden \u2014 10%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066673792344064
+    m_Localized: "Chance, Strafzeit zu vermeiden \u2014 20%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068014367399936
+    m_Localized: "Chance, Strafzeit zu vermeiden \u2014 30%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068453984985088
+    m_Localized: "Chance, Strafzeit zu vermeiden \u2014 40%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068922908172288
+    m_Localized: "Chance, Strafzeit zu vermeiden \u2014 50%\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069254811836416
+    m_Localized: "Erh\xF6ht die Gesamtmenge an Gold"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069708564226048
+    m_Localized: Gesamtgoldmenge +7%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076065812078592
+    m_Localized: Gesamtgoldmenge +14%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076401989738496
+    m_Localized: Gesamtgoldmenge +21%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076783033868288
+    m_Localized: Gesamtgoldmenge +28%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077061346910208
+    m_Localized: Gesamtgoldmenge +35%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077479162503168
+    m_Localized: "Erh\xF6ht die maximale Zeit des Timers"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077847787298816
+    m_Localized: Maximale Timerdauer +5 Sekunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078367537061888
+    m_Localized: Maximale Timerdauer +10 Sekunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078762615332864
+    m_Localized: Maximale Timerdauer +15 Sekunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079099564744704
+    m_Localized: Maximale Timerdauer +20 Sekunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079404461285376
+    m_Localized: Maximale Timerdauer +25 Sekunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079770414309376
+    m_Localized: "Gibt eine Chance, die Zeit f\xFCr die teleportierte Figur weiter
+      zu verringern"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9080725541216256
+    m_Localized: Chance, die Timerdauer zu verringern +7%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081301322686464
+    m_Localized: Chance, die Timerdauer zu verringern +14%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081609931186176
+    m_Localized: Chance, die Timerdauer zu verringern +21%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081962324025344
+    m_Localized: Chance, die Timerdauer zu verringern +28%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9082351781928960
+    m_Localized: Chance, die Timerdauer zu verringern +35%
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,328 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_pt
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt
+  m_SharedData: {fileID: 11400000, guid: 3f356df5ce6e23c46be294ed39c22954, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 13298048163840
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16264935235584
+    m_Localized: "Configura\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22663186604032
+    m_Localized: Jogar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24380045254656
+    m_Localized: Loja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29121919836160
+    m_Localized: "Sele\xE7\xE3o de n\xEDvel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 452755641589760
+    m_Localized: "Bem-vindo \xE0 nossa empresa \"Do\xE7ura em Alegria\"!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453584012435456
+    m_Localized: "Somos especializados no transporte dos biscoitos mais deliciosos
+      da gal\xE1xia!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453941769789440
+    m_Localized: "Como nosso funcion\xE1rio, voc\xEA ocupa uma posi\xE7\xE3o muito
+      importante, regulando v\xE1rias formas de teletransporte de acordo com a cor
+      dos biscoitos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 454442703904768
+    m_Localized: "Mova formas para as c\xE9lulas enquanto segura"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455084558245888
+    m_Localized: Para girar a forma, segure-a
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455484006981632
+    m_Localized: "Se n\xE3o houver uma forma correspondente por cor ou formato, toque
+      nela."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456630155075584
+    m_Localized: "Fique de olho no cron\xF4metro, o importante \xE9 terminar antes
+      que ele encha! N\xE3o precisamos de avalia\xE7\xF5es de clientes irritados!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457224710250496
+    m_Localized: "O medidor \"Cookies Enviados\" deve ser preenchido: quanto maior
+      a forma, mais r\xE1pido o progresso. Simultaneamente, o medidor de tempo diminui,
+      dando mais oportunidades para agir."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457735966547968
+    m_Localized: "Excluir uma forma no painel resultar\xE1 em uma penalidade de um
+      segundo se a cor n\xE3o corresponder \xE0 \xFAltima forma exclu\xEDda."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458173847691264
+    m_Localized: "Aten\xE7\xE3o! Gansos alien\xEDgenas \xE0s vezes roubam nossos
+      biscoitos! Eles pegam das plataformas laterais que combinam com sua cor, e
+      voc\xEA leva uma penalidade de tempo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458678510542848
+    m_Localized: Os gansos podem ser atordoados por cinco segundos ao clicar neles.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459054928355328
+    m_Localized: "A empresa conta com voc\xEA! Obrigado pelo seu trabalho e boa sorte!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1491616509452288
+    m_Localized: "Este \xE9 o meu primeiro projeto nesta profiss\xE3o. Espero que
+      gostem deste jogo. Tentei torn\xE1-lo o mais interessante e variado poss\xEDvel
+      para voc\xEAs.\r\n\r\nRegras:\r\nColoque as formas nas c\xE9lulas de acordo
+      com a cor do biscoito mais pr\xF3ximo na esteira. Fique de olho no tempo. E
+      n\xE3o deixe os gansos levarem seus doces.\r\n\r\nAutor do jogo: Ponitskiy
+      Sergey Sergeevich\r\n\r\nAgrade\xE7o \xE0 escola online YaJunior por ensinar
+      desenvolvimento de jogos.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1809592202813440
+    m_Localized: "Vit\xF3ria"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811756740501504
+    m_Localized: Derrota
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2163186223538176
+    m_Localized: Comprar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2165712754827264
+    m_Localized: "Desativar an\xFAncios"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3020197744074752
+    m_Localized: "As vendas de biscoitos est\xE3o crescendo, e a tinta ajudar\xE1
+      voc\xEA a fazer seu trabalho com mais qualidade. Arraste o rolo para as formas
+      localizadas no painel. A cor \xE9 sempre aleat\xF3ria. Tempo de recarga: 10
+      segundos. Al\xE9m disso, voc\xEA pode redefinir a cor da mesma forma que exclui
+      as formas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3023815209639936
+    m_Localized: "Os gansos come\xE7aram a usar amplificadores! Tenha mais cuidado!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025513563021312
+    m_Localized: Aumenta a velocidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025833793937408
+    m_Localized: Muda a cor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3028883443015680
+    m_Localized: "Muda a dire\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3037934595858432
+    m_Localized: "A c\xE9lula preta \xE9 uma c\xE9lula quebrada. Voc\xEA n\xE3o pode
+      colocar uma forma nela."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3047601568997376
+    m_Localized: "As c\xE9lulas coloridas s\xE3o c\xE9lulas obrigat\xF3rias. Voc\xEA
+      precisa teleportar biscoitos delas pelo menos uma vez antes do final do n\xEDvel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5485797607202816
+    m_Localized: Para girar a forma, segure-a e toque em qualquer lugar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5486866471051264
+    m_Localized: "Se n\xE3o houver uma forma correspondente por cor ou formato, mantenha
+      um toque em qualquer lugar e toque para excluir."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5936307288137728
+    m_Localized: "Tabela de l\xEDderes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8681844965892096
+    m_Localized: "Ajuda a mover formas e tintas, deslizando-as para o lado quando
+      mantidas. Usado em dispositivos m\xF3veis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682333581336576
+    m_Localized: "Redefinir para as configura\xE7\xF5es padr\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058288090996736
+    m_Localized: Aumenta o tempo de atordoamento dos gansos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058694154149888
+    m_Localized: Atordoamento de gansos + 2 segundos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059428564197376
+    m_Localized: Atordoamento de gansos + 4 segundos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059815077699584
+    m_Localized: Atordoamento de gansos + 6 segundos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060122159472640
+    m_Localized: Atordoamento de gansos + 8 segundos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060401219100672
+    m_Localized: Atordoamento de gansos + 10 segundos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060796708413440
+    m_Localized: Reduz o tempo de recarga da tinta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9061920853188608
+    m_Localized: Recarga de tinta -1 segundo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9063570519089152
+    m_Localized: Recarga de tinta -2 segundos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064009381699584
+    m_Localized: Recarga de tinta -3 segundos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064355357253632
+    m_Localized: Recarga de tinta -4 segundos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064692935811072
+    m_Localized: Recarga de tinta -5 segundos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9065247766732800
+    m_Localized: "D\xE1 a chance de evitar acumula\xE7\xE3o do tempo de penalidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066286163156992
+    m_Localized: "Chance de evitar o tempo de penalidade \u2014 10%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066673792344064
+    m_Localized: "Chance de evitar o tempo de penalidade \u2014 20%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068014367399936
+    m_Localized: "Chance de evitar o tempo de penalidade \u2014 30%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068453984985088
+    m_Localized: "Chance de evitar o tempo de penalidade \u2014 40%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068922908172288
+    m_Localized: "Chance de evitar o tempo de penalidade \u2014 50%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069254811836416
+    m_Localized: Aumenta a quantidade total de ouro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069708564226048
+    m_Localized: Quantidade total de ouro +7%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076065812078592
+    m_Localized: Quantidade total de ouro +14%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076401989738496
+    m_Localized: Quantidade total de ouro +21%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076783033868288
+    m_Localized: Quantidade total de ouro +28%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077061346910208
+    m_Localized: Quantidade total de ouro +35%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077479162503168
+    m_Localized: "Aumenta o tempo m\xE1ximo do temporizador"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077847787298816
+    m_Localized: "Tempo m\xE1ximo do temporizador +5 segundos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078367537061888
+    m_Localized: "Tempo m\xE1ximo do temporizador +10 segundos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078762615332864
+    m_Localized: "Tempo m\xE1ximo do temporizador +15 segundos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079099564744704
+    m_Localized: "Tempo m\xE1ximo do temporizador +20 segundos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079404461285376
+    m_Localized: "Tempo m\xE1ximo do temporizador +25 segundos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079770414309376
+    m_Localized: Oferece uma chance de diminuir ainda mais o tempo para a figura
+      teletransportada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9080725541216256
+    m_Localized: "Chance de reduzir a dura\xE7\xE3o do temporizador +7%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081301322686464
+    m_Localized: "Chance de reduzir a dura\xE7\xE3o do temporizador +14%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081609931186176
+    m_Localized: "Chance de reduzir a dura\xE7\xE3o do temporizador +21%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081962324025344
+    m_Localized: "Chance de reduzir a dura\xE7\xE3o do temporizador +28%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9082351781928960
+    m_Localized: "Chance de reduzir a dura\xE7\xE3o do temporizador +35%"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

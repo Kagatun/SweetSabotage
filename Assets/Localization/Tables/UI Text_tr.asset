@@ -1,0 +1,332 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_tr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: tr
+  m_SharedData: {fileID: 11400000, guid: 3f356df5ce6e23c46be294ed39c22954, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 13298048163840
+    m_Localized: "Men\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16264935235584
+    m_Localized: Ayarlar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22663186604032
+    m_Localized: Oyna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24380045254656
+    m_Localized: "D\xFCkkan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29121919836160
+    m_Localized: "Seviye se\xE7imi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 452755641589760
+    m_Localized: "\"Tatl\u0131l\u0131k ve Ne\u015Fe\" \u015Firketimize ho\u015F geldiniz!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453584012435456
+    m_Localized: "Galaksinin en lezzetli kurabiyelerini ta\u015F\u0131ma konusunda
+      uzman\u0131z!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453941769789440
+    m_Localized: "\xC7al\u0131\u015Fan\u0131m\u0131z olarak, \xE7ok \xF6nemli bir
+      pozisyona sahipsiniz ve kurabiyelerin rengine g\xF6re \xE7e\u015Fitli \u0131\u015F\u0131nlama
+      \u015Fekillerini d\xFCzenliyorsunuz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 454442703904768
+    m_Localized: "Tutarak \u015Fekilleri h\xFCcrelere ta\u015F\u0131y\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455084558245888
+    m_Localized: "\u015Eekli d\xF6nd\xFCrmek i\xE7in bas\u0131l\u0131 tutu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455484006981632
+    m_Localized: "Renk veya \u015Fekil olarak uygun bir blok yoksa, dokunun."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456630155075584
+    m_Localized: "Zamanlay\u0131c\u0131y\u0131 takip edin, as\u0131l \xF6nemli olan
+      dolmadan \xF6nce bitirmek! K\u0131zg\u0131n m\xFC\u015Fteri yorumlar\u0131na
+      ihtiyac\u0131m\u0131z yok!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457224710250496
+    m_Localized: "\"G\xF6nderilen Kurabiyeler\" g\xF6stergesi doldurulmal\u0131d\u0131r:
+      \u015Fekil ne kadar b\xFCy\xFCkse, ilerleme o kadar h\u0131zl\u0131 olur. Ayn\u0131
+      zamanda, zaman g\xF6stergesi azalarak size daha fazla \xE7al\u0131\u015Fma
+      imkan\u0131 verir."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457735966547968
+    m_Localized: "Paneldeki bir \u015Fekli silmek, renk son silinen \u015Fekille
+      e\u015Fle\u015Fmiyorsa bir saniyelik bir ceza ile sonu\xE7lan\u0131r."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458173847691264
+    m_Localized: "Dikkat! Uzayl\u0131 kazlar bazen kurabiyelerimizi \xE7almaya gelir!
+      Kenar platformlardan kendi rengine uyanlar\u0131 kapar ve zaman cezas\u0131
+      al\u0131rs\u0131n\u0131z."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458678510542848
+    m_Localized: "Kazlara t\u0131klayarak onlar\u0131 be\u015F saniye boyunca sersemletebilirsiniz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459054928355328
+    m_Localized: "\u015Eirket size g\xFCveniyor! \xC7al\u0131\u015Fmalar\u0131n\u0131z
+      i\xE7in te\u015Fekk\xFCrler ve iyi \u015Fanslar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1491616509452288
+    m_Localized: "Bu, bu meslekteki ilk projem. Umar\u0131m bu oyunu be\u011Fenirsiniz.
+      Sizin i\xE7in olabildi\u011Fince ilgin\xE7 ve \xE7e\u015Fitli yapmaya \xE7al\u0131\u015Ft\u0131m.\r\n\r\nKurallar:\r\n\u015Eekilleri,
+      konvey\xF6rdeki en yak\u0131n kurabiyenin rengine g\xF6re h\xFCcrelere yerle\u015Ftirin.
+      Zamana dikkat edin. Ve kazlar\u0131n tatl\u0131lar\u0131n\u0131z\u0131 almas\u0131na
+      izin vermeyin.\r\n\r\nOyun Yazar\u0131: Ponitskiy Sergey Sergeevich\r\n\r\nOyun
+      geli\u015Ftirme e\u011Fitimi i\xE7in YaJunior online okuluna te\u015Fekk\xFCrler.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1809592202813440
+    m_Localized: Zafer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811756740501504
+    m_Localized: Yenilgi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2163186223538176
+    m_Localized: "Sat\u0131n al"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2165712754827264
+    m_Localized: "Reklamlar\u0131 devre d\u0131\u015F\u0131 b\u0131rak"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3020197744074752
+    m_Localized: "Kurabiye sat\u0131\u015Flar\u0131 art\u0131yor ve boya, i\u015Finizi
+      daha iyi yapman\u0131za yard\u0131mc\u0131 olacak. Panelde bulunan \u015Fekillerin
+      \xFCzerine ruloyu s\xFCr\xFCkleyin. Renk her zaman rastgeledir. \u015Earj s\xFCresi:
+      10 saniye. Ayr\u0131ca, rengi \u015Fekilleri silerken oldu\u011Fu gibi s\u0131f\u0131rlayabilirsiniz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3023815209639936
+    m_Localized: "Kazlar amplifikat\xF6r kullanmaya ba\u015Flad\u0131! Daha dikkatli
+      olun!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025513563021312
+    m_Localized: "H\u0131z\u0131 art\u0131r\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025833793937408
+    m_Localized: "Rengi de\u011Fi\u015Ftirir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3028883443015680
+    m_Localized: "Y\xF6n\xFC de\u011Fi\u015Ftirir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3037934595858432
+    m_Localized: "Siyah h\xFCcre bozuk bir h\xFCcredir. \xDCzerine bir \u015Fekil
+      yerle\u015Ftiremezsiniz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3047601568997376
+    m_Localized: "Renkli h\xFCcreler zorunlu h\xFCcrelerdir. Seviye bitmeden \xF6nce
+      en az bir kez onlardan kurabiyeleri \u0131\u015F\u0131nlaman\u0131z gerekiyor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5485797607202816
+    m_Localized: "\u015Eekli d\xF6nd\xFCrmek i\xE7in bas\u0131l\u0131 tutun ve herhangi
+      bir yere dokunun."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5486866471051264
+    m_Localized: "Renk veya \u015Fekil olarak uygun bir blok yoksa, herhangi bir
+      yerde dokunmay\u0131 bas\u0131l\u0131 tutun ve silmek i\xE7in dokunun."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5936307288137728
+    m_Localized: Liderlik Tablosu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8681844965892096
+    m_Localized: "Bas\u0131l\u0131 tutuldu\u011Funda \u015Fekilleri ve boyalar\u0131
+      yana kayd\u0131rarak hareket ettirmeye yard\u0131mc\u0131 olur. Mobil cihazlarda
+      kullan\u0131l\u0131r."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682333581336576
+    m_Localized: "Varsay\u0131lan ayarlara s\u0131f\u0131rla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058288090996736
+    m_Localized: "Kazlar\u0131n sersemleme s\xFCresini art\u0131r\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058694154149888
+    m_Localized: "Kazlar\u0131n sersemletilmesi + 2 saniye"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059428564197376
+    m_Localized: "Kazlar\u0131n sersemletilmesi + 4 saniye"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059815077699584
+    m_Localized: "Kazlar\u0131n sersemletilmesi + 6 saniye"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060122159472640
+    m_Localized: "Kazlar\u0131n sersemletilmesi + 8 saniye"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060401219100672
+    m_Localized: "Kazlar\u0131n sersemletilmesi + 10 saniye"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060796708413440
+    m_Localized: "Boya yeniden doldurma s\xFCresini k\u0131salt\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9061920853188608
+    m_Localized: "Boya yeniden doldurma 1 saniye azal\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9063570519089152
+    m_Localized: "Boya yeniden doldurma 2 saniye azal\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064009381699584
+    m_Localized: "Boya yeniden doldurma 3 saniye azal\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064355357253632
+    m_Localized: "Boya yeniden doldurma 4 saniye azal\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064692935811072
+    m_Localized: "Boya yeniden doldurma 5 saniye azal\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9065247766732800
+    m_Localized: "Ceza s\xFCresinin hesaplanmas\u0131n\u0131 \xF6nleme \u015Fans\u0131
+      sa\u011Flar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066286163156992
+    m_Localized: "Ceza s\xFCresinden ka\xE7\u0131nma \u015Fans\u0131 \u2014 %10"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066673792344064
+    m_Localized: "Ceza s\xFCresinden ka\xE7\u0131nma \u015Fans\u0131 \u2014 %20"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068014367399936
+    m_Localized: "Ceza s\xFCresinden ka\xE7\u0131nma \u015Fans\u0131 \u2014 %30"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068453984985088
+    m_Localized: "Ceza s\xFCresinden ka\xE7\u0131nma \u015Fans\u0131 \u2014 %40"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068922908172288
+    m_Localized: "Ceza s\xFCresinden ka\xE7\u0131nma \u015Fans\u0131 \u2014 %50"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069254811836416
+    m_Localized: "Toplam alt\u0131n miktar\u0131n\u0131 art\u0131r\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069708564226048
+    m_Localized: "Toplam alt\u0131n miktar\u0131 +7%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076065812078592
+    m_Localized: "Toplam alt\u0131n miktar\u0131 +14%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076401989738496
+    m_Localized: "Toplam alt\u0131n miktar\u0131 +21%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076783033868288
+    m_Localized: "Toplam alt\u0131n miktar\u0131 +28%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077061346910208
+    m_Localized: "Toplam alt\u0131n miktar\u0131 +35%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077479162503168
+    m_Localized: "Zamanlay\u0131c\u0131n\u0131n maksimum s\xFCresini art\u0131r\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077847787298816
+    m_Localized: "Maksimum zamanlay\u0131c\u0131 s\xFCresi +5 saniye"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078367537061888
+    m_Localized: "Maksimum zamanlay\u0131c\u0131 s\xFCresi +10 saniye"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078762615332864
+    m_Localized: "Maksimum zamanlay\u0131c\u0131 s\xFCresi +15 saniye"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079099564744704
+    m_Localized: "Maksimum zamanlay\u0131c\u0131 s\xFCresi +20 saniye"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079404461285376
+    m_Localized: "Maksimum zamanlay\u0131c\u0131 s\xFCresi +25 saniye"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079770414309376
+    m_Localized: "Teleporte edilmi\u015F bir \u015Feklin s\xFCresini daha fazla azaltma
+      \u015Fans\u0131 verir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9080725541216256
+    m_Localized: "Zamanlay\u0131c\u0131 s\xFCresini azaltma \u015Fans\u0131 +7%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081301322686464
+    m_Localized: "Zamanlay\u0131c\u0131 s\xFCresini azaltma \u015Fans\u0131 +14%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081609931186176
+    m_Localized: "Zamanlay\u0131c\u0131 s\xFCresini azaltma \u015Fans\u0131 +21%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081962324025344
+    m_Localized: "Zamanlay\u0131c\u0131 s\xFCresini azaltma \u015Fans\u0131 +28%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9082351781928960
+    m_Localized: "Zamanlay\u0131c\u0131 s\xFCresini azaltma \u015Fans\u0131 +35%"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

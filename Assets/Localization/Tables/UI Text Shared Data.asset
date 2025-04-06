@@ -1,0 +1,308 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Text Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI Text
+  m_TableCollectionNameGuidString: 3f356df5ce6e23c46be294ed39c22954
+  m_Entries:
+  - m_Id: 13298048163840
+    m_Key: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16264935235584
+    m_Key: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22663186604032
+    m_Key: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24380045254656
+    m_Key: Shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29121919836160
+    m_Key: Level selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 452755641589760
+    m_Key: Hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453584012435456
+    m_Key: Hint_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453941769789440
+    m_Key: Hint_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 454442703904768
+    m_Key: Hint_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455084558245888
+    m_Key: Hint_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455484006981632
+    m_Key: Hint_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456630155075584
+    m_Key: Hint_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457224710250496
+    m_Key: Hint_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457735966547968
+    m_Key: Hint_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458173847691264
+    m_Key: Hint_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458678510542848
+    m_Key: Hint_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459054928355328
+    m_Key: Hint_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1491616509452288
+    m_Key: AboutText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1809592202813440
+    m_Key: Victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811756740501504
+    m_Key: Defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2163186223538176
+    m_Key: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2165712754827264
+    m_Key: Disable ads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3020197744074752
+    m_Key: Hint_12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3023815209639936
+    m_Key: Hint_13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025513563021312
+    m_Key: Hint_14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025833793937408
+    m_Key: Hint_15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3028883443015680
+    m_Key: Hint_16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3037934595858432
+    m_Key: Hint_17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3047601568997376
+    m_Key: Hint_18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5485797607202816
+    m_Key: Hint_19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5486866471051264
+    m_Key: Hint_20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5936307288137728
+    m_Key: Leaderboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8681844965892096
+    m_Key: Hint_21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682333581336576
+    m_Key: Hint_22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058288090996736
+    m_Key: StunDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058694154149888
+    m_Key: StunLevel_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059428564197376
+    m_Key: StunLevel_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059815077699584
+    m_Key: StunLevel_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060122159472640
+    m_Key: StunLevel_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060401219100672
+    m_Key: StunLevel_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060796708413440
+    m_Key: PaintDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9061920853188608
+    m_Key: PaintLevel_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9063570519089152
+    m_Key: PaintLevel_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064009381699584
+    m_Key: PaintLevel_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064355357253632
+    m_Key: PaintLevel_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064692935811072
+    m_Key: PaintLevel_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9065247766732800
+    m_Key: PenaltyTimeLuckDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066286163156992
+    m_Key: LuckLevel_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066673792344064
+    m_Key: LuckLevel_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068014367399936
+    m_Key: LuckLevel_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068453984985088
+    m_Key: LuckLevel_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068922908172288
+    m_Key: LuckLevel_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069254811836416
+    m_Key: GoldSurchargeDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069708564226048
+    m_Key: GoldLevel_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076065812078592
+    m_Key: GoldLevel_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076401989738496
+    m_Key: GoldLevel_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076783033868288
+    m_Key: GoldLevel_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077061346910208
+    m_Key: GoldLevel_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077479162503168
+    m_Key: MaxTimeDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077847787298816
+    m_Key: MaxTimeLevel_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078367537061888
+    m_Key: MaxTimeLevel_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078762615332864
+    m_Key: MaxTimeLevel_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079099564744704
+    m_Key: MaxTimeLevel_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079404461285376
+    m_Key: MaxTimeLevel_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079770414309376
+    m_Key: RemoveTimeDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9080725541216256
+    m_Key: RemoveTimeLevel_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081301322686464
+    m_Key: RemoveTimeLevel_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081609931186176
+    m_Key: RemoveTimeLevel_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081962324025344
+    m_Key: RemoveTimeLevel_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9082351781928960
+    m_Key: RemoveTimeLevel_5
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2552370155599953948
+  references:
+    version: 2
+    RefIds:
+    - rid: 2552370155599953948
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1741261427829

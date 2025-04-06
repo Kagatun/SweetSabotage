@@ -1,0 +1,337 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 3f356df5ce6e23c46be294ed39c22954, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 13298048163840
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16264935235584
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22663186604032
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24380045254656
+    m_Localized: Shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29121919836160
+    m_Localized: Level selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 452755641589760
+    m_Localized: Welcome to our company "Sweetness in Joy"!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453584012435456
+    m_Localized: We specialize in transporting the most delicious cookies in the
+      galaxy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 453941769789440
+    m_Localized: As our employee, you hold a very important position, regulating
+      various teleportation shapes according to the color of the cookies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 454442703904768
+    m_Localized: Move shapes onto cells while holding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455084558245888
+    m_Localized: To rotate the shape, hold it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455484006981632
+    m_Localized: If there's no matching shape by color or form, tap it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456630155075584
+    m_Localized: Keep an eye on the timer, the main thing is to finish before it
+      fills up! We don't need angry customer reviews!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457224710250496
+    m_Localized: 'The "Cookies Sent" meter must be filled: the larger the shape,
+      the faster the progress. Simultaneously, the time meter decreases, giving you
+      more opportunities to work.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457735966547968
+    m_Localized: Deleting a shape on the panel will result in a one-second penalty
+      if the color does not match the last deleted shape.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458173847691264
+    m_Localized: "Stay alert \u2014 alien geese occasionally fly in to steal our
+      cookies! They snatch treats from edge platforms matching their color, and you\u2019ll
+      get a time penalty."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458678510542848
+    m_Localized: The geese can be stunned for five seconds by clicking on them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459054928355328
+    m_Localized: The company relies on you! Thank you for your work, and good luck!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1491616509452288
+    m_Localized: 'This is my first project in this profession. I hope you enjoy this
+      game. I tried to make it as interesting and varied as possible for you.
+
+
+
+      Rules:
+
+      Place
+      shapes on the cells according to the color of the nearest cookie on the conveyor.
+      Keep an eye on the time. And don''t let the geese take your treats.
+
+
+
+      Game
+      Author: Ponitskiy Sergey Sergeevich
+
+
+
+      Thanks to the online school YaJunior
+      for teaching game development.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1809592202813440
+    m_Localized: Victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1811756740501504
+    m_Localized: Defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2163186223538176
+    m_Localized: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2165712754827264
+    m_Localized: Disable ads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3020197744074752
+    m_Localized: 'Cookie sales are growing, and the paint will help you do your job
+      better. Drag the roller onto the shapes located on the panel. The color is
+      always random. Recharge time: 10 seconds. Additionally, you can reset the color
+      in the same way as deleting shapes.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3023815209639936
+    m_Localized: The geese have started using amplifiers! Be more careful!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025513563021312
+    m_Localized: Increases the speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3025833793937408
+    m_Localized: Changes color
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3028883443015680
+    m_Localized: Changes direction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3037934595858432
+    m_Localized: The black cell is a broken cell. You cannot place a shape on it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3047601568997376
+    m_Localized: Colored cells are mandatory cells. You need to teleport cookies
+      from them at least once before the end of the level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5485797607202816
+    m_Localized: To rotate the shape, hold it and tap anywhere.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5486866471051264
+    m_Localized: "If there\u2019s no matching shape by color or form, hold a touch
+      anywhere and tap it to delete."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5936307288137728
+    m_Localized: Leaderboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8681844965892096
+    m_Localized: Helps move shapes and paints by shifting them sideways when held.
+      Used on mobile devices.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682333581336576
+    m_Localized: Reset to default settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058288090996736
+    m_Localized: Increases geese stun duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9058694154149888
+    m_Localized: Stunning geese + 2 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059428564197376
+    m_Localized: Stunning geese + 4 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9059815077699584
+    m_Localized: Stunning geese + 6 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060122159472640
+    m_Localized: Stunning geese + 8 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060401219100672
+    m_Localized: Stunning geese + 10 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9060796708413440
+    m_Localized: Reduces ink reload time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9061920853188608
+    m_Localized: Ink reload -1 second
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9063570519089152
+    m_Localized: Ink reload -2 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064009381699584
+    m_Localized: Ink reload -3 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064355357253632
+    m_Localized: Ink reload -4 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9064692935811072
+    m_Localized: Ink reload -5 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9065247766732800
+    m_Localized: Gives a chance to avoid penalty time accumulation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066286163156992
+    m_Localized: "Chance to avoid penalty time \u2014 10%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9066673792344064
+    m_Localized: "Chance to avoid penalty time \u2014 20%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068014367399936
+    m_Localized: "Chance to avoid penalty time \u2014 30%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068453984985088
+    m_Localized: "Chance to avoid penalty time \u2014 40%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9068922908172288
+    m_Localized: "Chance to avoid penalty time \u2014 50%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069254811836416
+    m_Localized: Increases the total amount of gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9069708564226048
+    m_Localized: Total gold amount +7%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076065812078592
+    m_Localized: Total gold amount +14%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076401989738496
+    m_Localized: "\u0418\u0442\u043E\u0433\u043E\u0432\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E
+      \u0437\u043E\u043B\u043E\u0442\u0430 +21%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076783033868288
+    m_Localized: Total gold amount +28%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077061346910208
+    m_Localized: Total gold amount +35%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077479162503168
+    m_Localized: Increases maximum timer duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077847787298816
+    m_Localized: Maximum timer duration +5 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078367537061888
+    m_Localized: Maximum timer duration +10 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9078762615332864
+    m_Localized: Maximum timer duration +15 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079099564744704
+    m_Localized: Maximum timer duration +20 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079404461285376
+    m_Localized: Maximum timer duration +25 seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9079770414309376
+    m_Localized: Gives a chance to further reduce time for teleported figure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9080725541216256
+    m_Localized: Chance to reduce timer duration +7%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081301322686464
+    m_Localized: Chance to reduce timer duration +14%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081609931186176
+    m_Localized: Chance to reduce timer duration +21%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9081962324025344
+    m_Localized: Chance to reduce timer duration +28%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9082351781928960
+    m_Localized: Chance to reduce timer duration +35%
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
