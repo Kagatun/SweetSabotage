@@ -1,54 +1,58 @@
+using Common;
 using System;
 using System.Collections;
 using UnityEngine;
 using YG;
 
-public class Stunner
+namespace Bird
 {
-    private Mover _mover;
-    private AnimationsGoose _animations;
-    private float _stun = 5;
-    private WaitForSeconds _stunTime;
-    private Coroutine _stunCoroutine;
-
-    public Stunner(Mover mover, AnimationsGoose animations)
+    public class Stunner
     {
-        int multiplier = 2;
-        int extraTime = YandexGame.savesData.ExtraStun * multiplier;
-        _stun += extraTime;
-        _mover = mover;
-        _animations = animations;
+        private Mover _mover;
+        private AnimationsGoose _animations;
+        private float _stun = 5;
+        private WaitForSeconds _stunTime;
+        private Coroutine _stunCoroutine;
 
-        _stunTime = new WaitForSeconds(_stun);
-    }
-
-    public bool IsStunned { get; private set; }
-
-    public void Stun(Action onStunComplete)
-    {
-        StopCoroutineStun();
-
-        IsStunned = true;
-        _mover.GoToTarget(null);
-        _animations.TriggerStun();
-
-        _stunCoroutine = _mover.StartCoroutine(ResumeMovementAfterStun(onStunComplete));
-    }
-
-    private void StopCoroutineStun()
-    {
-        if (_stunCoroutine != null)
+        public Stunner(Mover mover, AnimationsGoose animations)
         {
-            _mover.StopCoroutine(_stunCoroutine);
-            _stunCoroutine = null;
+            int multiplier = 2;
+            int extraTime = YandexGame.savesData.ExtraStun * multiplier;
+            _stun += extraTime;
+            _mover = mover;
+            _animations = animations;
+
+            _stunTime = new WaitForSeconds(_stun);
         }
-    }
 
-    private IEnumerator ResumeMovementAfterStun(Action onStunComplete)
-    {
-        yield return _stunTime;
+        public bool IsStunned { get; private set; }
 
-        IsStunned = false;
-        onStunComplete?.Invoke();
+        public void Stun(Action onStunComplete)
+        {
+            StopCoroutineStun();
+
+            IsStunned = true;
+            _mover.GoToTarget(null);
+            _animations.TriggerStun();
+
+            _stunCoroutine = _mover.StartCoroutine(ResumeMovementAfterStun(onStunComplete));
+        }
+
+        private void StopCoroutineStun()
+        {
+            if (_stunCoroutine != null)
+            {
+                _mover.StopCoroutine(_stunCoroutine);
+                _stunCoroutine = null;
+            }
+        }
+
+        private IEnumerator ResumeMovementAfterStun(Action onStunComplete)
+        {
+            yield return _stunTime;
+
+            IsStunned = false;
+            onStunComplete?.Invoke();
+        }
     }
 }

@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class RestarterLevel : ButtonHandler
+namespace InterfaceUI
 {
-    [SerializeField] private AdapterBetweenScenes _adapterBetweenScenes;
-
-    protected override void OnButtonClick()
+    public class RestarterLevel : ButtonHandler
     {
-        Time.timeScale = 1;
-        _adapterBetweenScenes.RestartLevel();
+        [SerializeField] private AdapterBetweenScenes _adapterBetweenScenes;
+
+        protected override void OnButtonClick()
+        {
+            Time.timeScale = 1;
+            _adapterBetweenScenes.RestartLevel();
+        }
     }
 }

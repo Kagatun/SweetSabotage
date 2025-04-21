@@ -1,24 +1,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartPositionCalculator
+namespace Bird
 {
-    public int FindStartClosestPointIndex(List<Transform> movePoints, Vector3 currentPosition)
+    public class StartPositionCalculator
     {
-        int closestIndex = -1;
-        float closestDistanceSqr = Mathf.Infinity;
-
-        for (int i = 0; i < movePoints.Count; i++)
+        public int FindStartClosestPointIndex(List<Transform> movePoints, Vector3 currentPosition)
         {
-            float distanceSqr = (movePoints[i].position - currentPosition).sqrMagnitude;
+            int closestIndex = -1;
+            float closestDistanceSqr = Mathf.Infinity;
 
-            if (distanceSqr < closestDistanceSqr)
+            for (int i = 0; i < movePoints.Count; i++)
             {
-                closestDistanceSqr = distanceSqr;
-                closestIndex = i;
-            }
-        }
+                float distanceSqr = (movePoints[i].position - currentPosition).sqrMagnitude;
 
-        return closestIndex;
+                if (distanceSqr < closestDistanceSqr)
+                {
+                    closestDistanceSqr = distanceSqr;
+                    closestIndex = i;
+                }
+            }
+
+            return closestIndex;
+        }
     }
 }

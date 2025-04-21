@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class AnimationsScene : MonoBehaviour
+namespace InterfaceUI
 {
-    private static class AnimationParams
+    public class AnimationsScene : MonoBehaviour
     {
-        public static readonly int Entry = Animator.StringToHash("Entry");
-        public static readonly int Exit = Animator.StringToHash("Exit");
+        private static class AnimationParams
+        {
+            public static readonly int Entry = Animator.StringToHash("Entry");
+            public static readonly int Exit = Animator.StringToHash("Exit");
+        }
+
+        [SerializeField] private Animator _animator;
+
+        public void TriggerEntryScene() =>
+            _animator.SetTrigger(AnimationParams.Entry);
+
+        public void TriggerExitScene() =>
+            _animator.SetTrigger(AnimationParams.Exit);
     }
-
-    [SerializeField] private Animator _animator;
-
-    public void TriggerEntryScene() =>
-        _animator.SetTrigger(AnimationParams.Entry);
-
-    public void TriggerExitScene() =>
-        _animator.SetTrigger(AnimationParams.Exit);
 }

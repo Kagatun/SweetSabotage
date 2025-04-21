@@ -1,19 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class ButtonHandler : MonoBehaviour
+namespace InterfaceUI
 {
-    [SerializeField] protected Button ActionButton;
-
-    protected virtual void OnEnable()
+    public abstract class ButtonHandler : MonoBehaviour
     {
-        ActionButton.onClick.AddListener(OnButtonClick);
-    }
+        [SerializeField] protected Button ActionButton;
 
-    protected virtual void OnDisable()
-    {
-        ActionButton.onClick.RemoveListener(OnButtonClick);
-    }
+        protected virtual void OnEnable()
+        {
+            ActionButton.onClick.AddListener(OnButtonClick);
+        }
 
-    protected abstract void OnButtonClick();
+        protected virtual void OnDisable()
+        {
+            ActionButton.onClick.RemoveListener(OnButtonClick);
+        }
+
+        protected abstract void OnButtonClick();
+    }
 }

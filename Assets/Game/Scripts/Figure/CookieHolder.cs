@@ -1,46 +1,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookieHolder : MonoBehaviour
+namespace Figure
 {
-    [SerializeField] private List<PointHolder> _pointHolders;
-
-    public IReadOnlyList<PointHolder> PointHolders => _pointHolders;
-
-    public PointHolder GetFreePoint()
+    public class CookieHolder : MonoBehaviour
     {
-        foreach (var point in _pointHolders)
+        [SerializeField] private List<PointHolder> _pointHolders;
+
+        public IReadOnlyList<PointHolder> PointHolders => _pointHolders;
+
+        public PointHolder GetFreePoint()
         {
-            if (point.HasFree)
-                return point;
+            foreach (var point in _pointHolders)
+            {
+                if (point.HasFree)
+                    return point;
+            }
+
+            return null;
         }
 
-        return null;
-    }
-
-    public void Clear()
-    {
-        foreach (var point in _pointHolders)
-            point.Clear();
-    }
-
-    public void TakeDamage()
-    {
-        foreach (var point in _pointHolders)
+        public void Clear()
         {
-            if (point.CurrentCookie != null)
+            foreach (var point in _pointHolders)
                 point.Clear();
         }
-    }
 
-    public bool HasCookies()
-    {
-        foreach (var point in _pointHolders)
+        public void TakeDamage()
         {
-            if (point.CurrentCookie != null)
-                return true;
+            foreach (var point in _pointHolders)
+            {
+                if (point.CurrentCookie != null)
+                    point.Clear();
+            }
         }
 
-        return false;
+        public bool HasCookies()
+        {
+            foreach (var point in _pointHolders)
+            {
+                if (point.CurrentCookie != null)
+                    return true;
+            }
+
+            return false;
+        }
     }
 }

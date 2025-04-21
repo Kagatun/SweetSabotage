@@ -1,5 +1,11 @@
-public class ColorChanger : BoostCell
+using Bird;
+using Utility;
+
+namespace Boost
 {
-    public override void ApplyBoost(Goose goose) =>
-            goose.SetColor(ColorPalette.GetRandomActiveColor());
+    public class ColorChanger : BoostCell
+    {
+        public override void ApplyBoost(Goose goose) =>
+                goose.SetColor(ColorPalette.GetRandomActiveColor());
+    }
 }

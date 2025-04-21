@@ -1,47 +1,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookieStorage : MonoBehaviour
+namespace Figure
 {
-    [SerializeField] private List<CookieHolder> _cookieHolders;
-
-    public int CookieHoldersCount => _cookieHolders.Count;
-
-    public PointHolder GetFreePoint()
+    public class CookieStorage : MonoBehaviour
     {
-        foreach (var cookieHolder in _cookieHolders)
+        [SerializeField] private List<CookieHolder> _cookieHolders;
+
+        public int CookieHoldersCount => _cookieHolders.Count;
+
+        public PointHolder GetFreePoint()
         {
-            var freePoint = cookieHolder.GetFreePoint();
-
-            if (freePoint != null)
-                return freePoint;
-        }
-
-        return null;
-    }
-
-    public bool ISHoldersFilled()
-    {
-        foreach (var cookieHolder in _cookieHolders)
-        {
-            foreach (var point in cookieHolder.PointHolders)
+            foreach (var cookieHolder in _cookieHolders)
             {
-                if (point.CurrentCookie == null)
-                    return false;
+                var freePoint = cookieHolder.GetFreePoint();
+
+                if (freePoint != null)
+                    return freePoint;
             }
+
+            return null;
         }
 
-        return true;
-    }
+        public bool ISHoldersFilled()
+        {
+            foreach (var cookieHolder in _cookieHolders)
+            {
+                foreach (var point in cookieHolder.PointHolders)
+                {
+                    if (point.CurrentCookie == null)
+                        return false;
+                }
+            }
 
-    public void Clear()
-    {
-        foreach (var holder in _cookieHolders)
-            holder.Clear();
-    }
+            return true;
+        }
 
-    public List<CookieHolder> GetCookieHolders()
-    {
-        return _cookieHolders;
+        public void Clear()
+        {
+            foreach (var holder in _cookieHolders)
+                holder.Clear();
+        }
+
+        public List<CookieHolder> GetCookieHolders()
+        {
+            return _cookieHolders;
+        }
     }
 }

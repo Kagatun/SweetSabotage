@@ -1,16 +1,20 @@
+using InterfaceUI;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using YG;
 
-public class LanguageChanger : ButtonHandler
+namespace Localization
 {
-    [SerializeField] private int _indexLanguage;
-
-    protected override void OnButtonClick()
+    public class LanguageChanger : ButtonHandler
     {
-        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[_indexLanguage];
+        [SerializeField] private int _indexLanguage;
 
-        YandexGame.savesData.IndexLanguage = _indexLanguage;
-        YandexGame.SaveProgress();
+        protected override void OnButtonClick()
+        {
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[_indexLanguage];
+
+            YandexGame.savesData.IndexLanguage = _indexLanguage;
+            YandexGame.SaveProgress();
+        }
     }
 }

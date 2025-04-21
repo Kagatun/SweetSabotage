@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class LevelActivator : ButtonHandler
+namespace InterfaceUI
 {
-    [SerializeField] private AdapterBetweenScenes _adapterBetweenScenes;
-    [SerializeField] private int _indexLevel;
-
-    public int IndexLevel => _indexLevel;
-
-    protected override void OnButtonClick()
+    public class LevelActivator : ButtonHandler
     {
-        Time.timeScale = 1;
-        _adapterBetweenScenes.LoadExitScene(_indexLevel);
+        [SerializeField] private AdapterBetweenScenes _adapterBetweenScenes;
+        [SerializeField] private int _indexLevel;
+
+        public int IndexLevel => _indexLevel;
+
+        protected override void OnButtonClick()
+        {
+            Time.timeScale = 1;
+            _adapterBetweenScenes.LoadExitScene(_indexLevel);
+        }
     }
 }

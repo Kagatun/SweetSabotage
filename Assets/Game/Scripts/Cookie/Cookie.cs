@@ -1,95 +1,100 @@
 using System;
+using Common;
+using Figure;
 using UnityEngine;
 
-public class Cookie : MonoBehaviour
+namespace Pastry
 {
-    private Mover _mover;
-    private MeshRenderer _render;
-    private IPoolAdder<Cookie> _poolAdder;
-    private Rigidbody _rigidbody;
-    private MeshCollider _collider;
-    private PointHolder _point;
-    private ColorInitializer _colorInitializer;
-
-    public event Action Cleaned;
-
-    public Color Color => _colorInitializer.Color;
-
-    private void Awake()
+    public class Cookie : MonoBehaviour
     {
-        _mover = GetComponent<Mover>();
-        _render = GetComponent<MeshRenderer>();
-        _rigidbody = GetComponent<Rigidbody>();
-        _collider = GetComponent<MeshCollider>();
-        _colorInitializer = new ColorInitializer();
-    }
+        private Mover _mover;
+        private MeshRenderer _render;
+        private IPoolAdder<Cookie> _poolAdder;
+        private Rigidbody _rigidbody;
+        private MeshCollider _collider;
+        private PointHolder _point;
+        private ColorInitializer _colorInitializer;
 
-    private void OnEnable()
-    {
-        _mover.TargetReached += OnStopMove;
-    }
+        public event Action Cleaned;
 
-    private void OnDisable()
-    {
-        _mover.TargetReached -= OnStopMove;
-    }
+        public Color Color => _colorInitializer.Color;
 
-    public void SetColor(Color color) =>
-        _colorInitializer.SetColor(_render, color);
+        private void Awake()
+        {
+            _mover = GetComponent<Mover>();
+            _render = GetComponent<MeshRenderer>();
+            _rigidbody = GetComponent<Rigidbody>();
+            _collider = GetComponent<MeshCollider>();
+            _colorInitializer = new ColorInitializer();
+        }
 
-    public void Remove()
-    {
-        transform.parent = null;
-        _poolAdder.AddToPool(this);
-    }
+        private void OnEnable()
+        {
+            _mover.TargetReached += OnStopMove;
+        }
 
-    public void Init(IPoolAdder<Cookie> poolAdder) =>
-        _poolAdder = poolAdder;
+        private void OnDisable()
+        {
+            _mover.TargetReached -= OnStopMove;
+        }
 
-    public void EnableMover()
-    {
-        _rigidbody.isKinematic = false;
-        _collider.enabled = true;
-        _mover.enabled = true;
-    }
+        public void SetColor(Color color) =>
+            _colorInitializer.SetColor(_render, color);
 
-    public void DisableMover()
-    {
-        _rigidbody.isKinematic = false;
-        _collider.enabled = true;
-        _mover.enabled = false;
-    }
+        public void Remove()
+        {
+            transform.parent = null;
+            _poolAdder.AddToPool(this);
+        }
 
-    public void PushStart()
-    {
-        int force = 1;
-        _rigidbody.velocity = Vector3.zero;
-        _rigidbody.AddForce(-transform.forward * force, ForceMode.Impulse);
-    }
+        public void Init(IPoolAdder<Cookie> poolAdder) =>
+            _poolAdder = poolAdder;
 
-    public void SetTarget(PointHolder target)
-    {
-        Cleaned?.Invoke();
-        _rigidbody.velocity = Vector3.zero;
-        _collider.enabled = false;
-        _point = target;
-        _mover.enabled = true;
-        _mover.GoToTarget(target.transform);
-    }
+        public void EnableMover()
+        {
+            _rigidbody.isKinematic = false;
+            _collider.enabled = true;
+            _mover.enabled = true;
+        }
 
-    public void OnStopMove()
-    {
-        int rotationZ = 90;
+        public void DisableMover()
+        {
+            _rigidbody.isKinematic = false;
+            _collider.enabled = true;
+            _mover.enabled = false;
+        }
 
-        transform.position = _point.transform.position;
-        transform.parent = _point.transform;
-        transform.localRotation = Quaternion.Euler(0, 0, rotationZ);
+        public void PushStart()
+        {
+            int force = 1;
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.AddForce(-transform.forward * force, ForceMode.Impulse);
+        }
 
-        _mover.enabled = false;
-        _collider.enabled = false;
-        _rigidbody.isKinematic = true;
+        public void SetTarget(PointHolder target)
+        {
+            Cleaned?.Invoke();
+            _rigidbody.velocity = Vector3.zero;
+            _collider.enabled = false;
+            _point = target;
+            _mover.enabled = true;
+            _mover.GoToTarget(target.transform);
+        }
 
-        _point.AddCookie(this);
-        _point = null;
+        public void OnStopMove()
+        {
+            int rotationZ = 90;
+
+            transform.position = _point.transform.position;
+            transform.parent = _point.transform;
+            transform.localRotation = Quaternion.Euler(0, 0, rotationZ);
+
+            _mover.enabled = false;
+            _collider.enabled = false;
+            _rigidbody.isKinematic = true;
+
+            _point.AddCookie(this);
+            _point = null;
+        }
     }
 }

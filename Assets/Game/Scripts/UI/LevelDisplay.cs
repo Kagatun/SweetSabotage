@@ -3,37 +3,40 @@ using UnityEngine;
 using UnityEngine.UI;
 using YG;
 
-public class LevelDisplay : MonoBehaviour
+namespace InterfaceUI
 {
-    [SerializeField] private LevelActivator _levelActivator;
-    [SerializeField] private TextMeshProUGUI _text;
-    [SerializeField] private Image _imageBlock;
-
-    private int _currentLevelIndex;
-
-    private void Start()
+    public class LevelDisplay : MonoBehaviour
     {
-        if (YandexGame.SDKEnabled)
-            OpenLevel();
-    }
+        [SerializeField] private LevelActivator _levelActivator;
+        [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private Image _imageBlock;
 
-    private void OnEnable()
-    {
-        YandexGame.GetDataEvent += OpenLevel;
-    }
+        private int _currentLevelIndex;
 
-    private void OnDisable()
-    {
-        YandexGame.GetDataEvent -= OpenLevel;
-    }
+        private void Start()
+        {
+            if (YandexGame.SDKEnabled)
+                OpenLevel();
+        }
 
-    private void OpenLevel()
-    {
-        _currentLevelIndex = YandexGame.savesData.LevelIndex;
+        private void OnEnable()
+        {
+            YandexGame.GetDataEvent += OpenLevel;
+        }
 
-        if (_currentLevelIndex >= _levelActivator.IndexLevel)
-            _imageBlock.gameObject.SetActive(false);
+        private void OnDisable()
+        {
+            YandexGame.GetDataEvent -= OpenLevel;
+        }
 
-        _text.text = $"{_levelActivator.IndexLevel}";
+        private void OpenLevel()
+        {
+            _currentLevelIndex = YandexGame.savesData.LevelIndex;
+
+            if (_currentLevelIndex >= _levelActivator.IndexLevel)
+                _imageBlock.gameObject.SetActive(false);
+
+            _text.text = $"{_levelActivator.IndexLevel}";
+        }
     }
 }

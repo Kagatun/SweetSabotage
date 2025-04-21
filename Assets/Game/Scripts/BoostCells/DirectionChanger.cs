@@ -1,5 +1,10 @@
-public class DirectionChanger : BoostCell
+using Bird;
+
+namespace Boost
 {
-    public override void ApplyBoost(Goose goose) =>
-            goose.ReverseDirection();
+    public class DirectionChanger : BoostCell
+    {
+        public override void ApplyBoost(Goose goose) =>
+                goose.ReverseDirection();
+    }
 }

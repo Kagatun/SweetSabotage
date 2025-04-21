@@ -1,33 +1,37 @@
+using Boost;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoostsGenerator : MonoBehaviour
+namespace Spawner
 {
-    [SerializeField] private List<BoostCell> _boostCells;
-    [SerializeField] private int _count;
-
-    private List<Transform> _spawnPoints = new List<Transform>();
-
-    public void SetSpawnPoints(List<Transform> spawnPoints) =>
-        _spawnPoints.AddRange(spawnPoints);
-
-    public void InstallBoosts()
+    public class BoostsGenerator : MonoBehaviour
     {
-        int boostsToSpawn = Mathf.Min(_count, _spawnPoints.Count);
+        [SerializeField] private List<BoostCell> _boostCells;
+        [SerializeField] private int _count;
 
-        List<Transform> availableSpawnPoints = new List<Transform>(_spawnPoints);
+        private List<Transform> _spawnPoints = new List<Transform>();
 
-        for (int i = 0; i < boostsToSpawn; i++)
+        public void SetSpawnPoints(List<Transform> spawnPoints) =>
+            _spawnPoints.AddRange(spawnPoints);
+
+        public void InstallBoosts()
         {
-            int randomIndex = Random.Range(0, availableSpawnPoints.Count);
-            Transform spawnPoint = availableSpawnPoints[randomIndex];
+            int boostsToSpawn = Mathf.Min(_count, _spawnPoints.Count);
 
-            int randomBoostIndex = Random.Range(0, _boostCells.Count);
-            BoostCell boost = _boostCells[randomBoostIndex];
+            List<Transform> availableSpawnPoints = new List<Transform>(_spawnPoints);
 
-            float offsetY = 0.51f;
-            Instantiate(boost, spawnPoint.position + new Vector3(0, offsetY, 0), spawnPoint.rotation);
-            availableSpawnPoints.RemoveAt(randomIndex);
+            for (int i = 0; i < boostsToSpawn; i++)
+            {
+                int randomIndex = Random.Range(0, availableSpawnPoints.Count);
+                Transform spawnPoint = availableSpawnPoints[randomIndex];
+
+                int randomBoostIndex = Random.Range(0, _boostCells.Count);
+                BoostCell boost = _boostCells[randomBoostIndex];
+
+                float offsetY = 0.51f;
+                Instantiate(boost, spawnPoint.position + new Vector3(0, offsetY, 0), spawnPoint.rotation);
+                availableSpawnPoints.RemoveAt(randomIndex);
+            }
         }
     }
 }

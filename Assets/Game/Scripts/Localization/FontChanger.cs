@@ -4,55 +4,58 @@ using UnityEngine.Localization.Settings;
 using UnityEngine;
 using YG;
 
-public class FontChanger : MonoBehaviour
+namespace Localization
 {
-    [SerializeField] private TextMeshProUGUI _text;
-    [SerializeField] private List<TMP_FontAsset> _fonts;
-    [SerializeField] private List<FontSettings> _fontSettings;
-
-    private int _currentIndex;
-
-    private void Start()
+    public class FontChanger : MonoBehaviour
     {
-        if (YandexGame.SDKEnabled)
-            SetFont();
-    }
+        [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private List<TMP_FontAsset> _fonts;
+        [SerializeField] private List<FontSettings> _fontSettings;
 
-    private void OnEnable()
-    {
-        YandexGame.GetDataEvent += SetFont;
-    }
+        private int _currentIndex;
 
-    private void OnDisable()
-    {
-        YandexGame.GetDataEvent -= SetFont;
-    }
+        private void Start()
+        {
+            if (YandexGame.SDKEnabled)
+                SetFont();
+        }
 
-    public void SetFont()
-    {
-        var currentLocale = LocalizationSettings.SelectedLocale;
-        int currentIndex = LocalizationSettings.AvailableLocales.Locales.IndexOf(currentLocale);
-        _currentIndex = currentIndex;
+        private void OnEnable()
+        {
+            YandexGame.GetDataEvent += SetFont;
+        }
 
-        _text.font = _fonts[_currentIndex];
+        private void OnDisable()
+        {
+            YandexGame.GetDataEvent -= SetFont;
+        }
 
-        ResetTextSettings();
-        ApplyFontSettings(_fontSettings[_currentIndex]);
-    }
+        public void SetFont()
+        {
+            var currentLocale = LocalizationSettings.SelectedLocale;
+            int currentIndex = LocalizationSettings.AvailableLocales.Locales.IndexOf(currentLocale);
+            _currentIndex = currentIndex;
 
-    private void ApplyFontSettings(FontSettings settings)
-    {
-        if (settings.IsBold)
-            _text.fontStyle = FontStyles.Bold;
+            _text.font = _fonts[_currentIndex];
 
-        _text.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, settings.FaceDilate);
-        _text.fontMaterial.SetFloat(ShaderUtilities.ID_OutlineWidth, settings.OutlineWidth);
-    }
+            ResetTextSettings();
+            ApplyFontSettings(_fontSettings[_currentIndex]);
+        }
 
-    private void ResetTextSettings()
-    {
-        _text.fontStyle = FontStyles.Normal;
-        _text.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, 0f);
-        _text.fontMaterial.SetFloat(ShaderUtilities.ID_OutlineWidth, 0f);
+        private void ApplyFontSettings(FontSettings settings)
+        {
+            if (settings.IsBold)
+                _text.fontStyle = FontStyles.Bold;
+
+            _text.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, settings.FaceDilate);
+            _text.fontMaterial.SetFloat(ShaderUtilities.ID_OutlineWidth, settings.OutlineWidth);
+        }
+
+        private void ResetTextSettings()
+        {
+            _text.fontStyle = FontStyles.Normal;
+            _text.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, 0f);
+            _text.fontMaterial.SetFloat(ShaderUtilities.ID_OutlineWidth, 0f);
+        }
     }
 }

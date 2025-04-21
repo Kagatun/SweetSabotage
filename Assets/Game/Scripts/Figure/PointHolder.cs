@@ -1,23 +1,27 @@
 using UnityEngine;
+using Pastry;
 
-public class PointHolder : MonoBehaviour
+namespace Figure
 {
-    public bool HasFree { get; private set; } = true;
-    public Cookie CurrentCookie { get; private set; }
-
-    public void Reserve() =>
-        HasFree = false;
-
-    public void AddCookie(Cookie cookie) =>
-        CurrentCookie = cookie;
-
-    public void Clear()
+    public class PointHolder : MonoBehaviour
     {
-        if (CurrentCookie != null)
+        public bool HasFree { get; private set; } = true;
+        public Cookie CurrentCookie { get; private set; }
+
+        public void Reserve() =>
+            HasFree = false;
+
+        public void AddCookie(Cookie cookie) =>
+            CurrentCookie = cookie;
+
+        public void Clear()
         {
-            CurrentCookie.Remove();
-            CurrentCookie = null;
-            HasFree = true;
+            if (CurrentCookie != null)
+            {
+                CurrentCookie.Remove();
+                CurrentCookie = null;
+                HasFree = true;
+            }
         }
     }
 }

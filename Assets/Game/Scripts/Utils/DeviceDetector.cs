@@ -2,39 +2,42 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using YG;
 
-public class DeviceDetector : MonoBehaviour
+namespace Utility
 {
-    [DllImport("__Internal")]
-    private static extern int DetectDevice();
-
-    private void Start()
+    public class DeviceDetector : MonoBehaviour
     {
-        if (YandexGame.SDKEnabled)
-            IdentifyDevice();
-    }
+        [DllImport("__Internal")]
+        private static extern int DetectDevice();
 
-    private void OnEnable()
-    {
-        YandexGame.GetDataEvent += IdentifyDevice;
-    }
+        private void Start()
+        {
+            if (YandexGame.SDKEnabled)
+                IdentifyDevice();
+        }
 
-    private void OnDisable()
-    {
-        YandexGame.GetDataEvent -= IdentifyDevice;
-    }
+        private void OnEnable()
+        {
+            YandexGame.GetDataEvent += IdentifyDevice;
+        }
 
-    private void IdentifyDevice()
-    {
-        int deviceType = 1;
+        private void OnDisable()
+        {
+            YandexGame.GetDataEvent -= IdentifyDevice;
+        }
 
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
-            deviceType = DetectDevice();
+        private void IdentifyDevice()
+        {
+            int deviceType = 1;
 
-        if (deviceType == 0)
-            YandexGame.savesData.IsDesktop = false;
-        else
-            YandexGame.savesData.IsDesktop = true;
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+                deviceType = DetectDevice();
 
-        YandexGame.SaveProgress();
+            if (deviceType == 0)
+                YandexGame.savesData.IsDesktop = false;
+            else
+                YandexGame.savesData.IsDesktop = true;
+
+            YandexGame.SaveProgress();
+        }
     }
 }

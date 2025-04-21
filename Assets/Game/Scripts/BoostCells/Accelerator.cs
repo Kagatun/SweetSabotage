@@ -1,9 +1,14 @@
-public class Accelerator : BoostCell
+using Bird;
+
+namespace Boost
 {
-    public override void ApplyBoost(Goose goose)
+    public class Accelerator : BoostCell
     {
-        int _speedBoost = 1;
-        int _time = 2;
-        goose.ApplySpeedBoost(_speedBoost, _time);
+        public override void ApplyBoost(Goose goose)
+        {
+            int _speedBoost = 1;
+            int _time = 2;
+            goose.ApplySpeedBoost(_speedBoost, _time);
+        }
     }
 }

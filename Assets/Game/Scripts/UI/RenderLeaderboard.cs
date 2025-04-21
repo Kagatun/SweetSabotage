@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class RenderLeaderboard : ButtonHandler
+namespace InterfaceUI
 {
-    [SerializeField] private GameObject _dropdownPanel;
-
-    protected override void OnButtonClick()
+    public class RenderLeaderboard : ButtonHandler
     {
-        _dropdownPanel.SetActive(!_dropdownPanel.activeSelf);
+        [SerializeField] private GameObject _dropdownPanel;
+
+        protected override void OnButtonClick()
+        {
+            _dropdownPanel.SetActive(!_dropdownPanel.activeSelf);
+        }
     }
 }

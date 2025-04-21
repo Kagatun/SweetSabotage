@@ -1,9 +1,12 @@
 using YG;
 
-public class ResetButton : ButtonHandler
+namespace InterfaceUI
 {
-    protected override void OnButtonClick()
+    public class ResetButton : ButtonHandler
     {
-        YandexGame.ResetSaveProgress();
+        protected override void OnButtonClick()
+        {
+            YandexGame.ResetSaveProgress();
+        }
     }
 }

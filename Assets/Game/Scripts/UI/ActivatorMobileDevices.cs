@@ -2,16 +2,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
-public class ActivatorMobileDevices : MonoBehaviour
+namespace InterfaceUI
 {
-    [SerializeField] private List<GameObject> _gameObjects;
-
-    private void OnEnable()
+    public class ActivatorMobileDevices : MonoBehaviour
     {
-        if (YandexGame.savesData.IsDesktop)
+        [SerializeField] private List<GameObject> _gameObjects;
+
+        private void OnEnable()
         {
-            foreach (var gameObject in _gameObjects)
-                gameObject.SetActive(false);
+            if (YandexGame.savesData.IsDesktop)
+            {
+                foreach (var gameObject in _gameObjects)
+                    gameObject.SetActive(false);
+            }
         }
     }
 }
