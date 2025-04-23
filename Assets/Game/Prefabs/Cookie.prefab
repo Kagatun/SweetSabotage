@@ -162,5 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 14
-  _minDistanceToTargetSqr: 2.6
+  _minDistanceToTargetSqr: 2.7
   _flightAltitude: 2

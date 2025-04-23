@@ -1,5 +1,5 @@
 {
-    "idSave": 14868,
+    "idSave": 14980,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -90,7 +90,7 @@
     "ChanceLuck": 0,
     "ChanceRemoveTime": 0,
     "ExtraCharge": 0,
-    "IndexLanguage": 1,
+    "IndexLanguage": 0,
     "LevelIndex": 1,
     "MasterVolume": 1.0,
     "MusicVolume": 0.14430315792560578,
@@ -103,5 +103,5 @@
     "OffsetPaintRightVertical": -3.0,
     "IsBuy": false,
     "IsDesktop": true,
-    "IsFirstEntrance": true
+    "IsFirstEntrance": false
 }
