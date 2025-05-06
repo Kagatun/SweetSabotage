@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Pastry
 {
+    [RequireComponent(typeof(Mover), typeof(MeshRenderer), typeof(Rigidbody))]
     public class Cookie : MonoBehaviour
     {
         private Mover _mover;
@@ -15,12 +16,18 @@ namespace Pastry
         private PointHolder _point;
         private ColorInitializer _colorInitializer;
 
+        private int _forcePush = 1;
+        private Quaternion _rotation;
+
         public event Action Cleaned;
 
         public Color Color => _colorInitializer.Color;
 
         private void Awake()
         {
+            int rotationZ = 90;
+            _rotation = Quaternion.Euler(0, 0, rotationZ);
+
             _mover = GetComponent<Mover>();
             _render = GetComponent<MeshRenderer>();
             _rigidbody = GetComponent<Rigidbody>();
@@ -66,9 +73,8 @@ namespace Pastry
 
         public void PushStart()
         {
-            int force = 1;
             _rigidbody.velocity = Vector3.zero;
-            _rigidbody.AddForce(-transform.forward * force, ForceMode.Impulse);
+            _rigidbody.AddForce(-transform.forward * _forcePush, ForceMode.Impulse);
         }
 
         public void SetTarget(PointHolder target)
@@ -83,11 +89,9 @@ namespace Pastry
 
         public void OnStopMove()
         {
-            int rotationZ = 90;
-
             transform.position = _point.transform.position;
             transform.parent = _point.transform;
-            transform.localRotation = Quaternion.Euler(0, 0, rotationZ);
+            transform.localRotation = _rotation;
 
             _mover.enabled = false;
             _collider.enabled = false;

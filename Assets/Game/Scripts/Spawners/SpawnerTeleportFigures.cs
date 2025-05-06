@@ -79,7 +79,7 @@ namespace Spawner
             teleporterFigure.FillListCells(_cells);
             teleporterFigure.DisableDetector();
             teleporterFigure.SetSmallSize();
-            teleporterFigure.SetStatusInstall();
+            teleporterFigure.MarkAsNotInstalled();
 
             _currentFigureCount++;
         }

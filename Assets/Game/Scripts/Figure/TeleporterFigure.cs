@@ -7,6 +7,7 @@ using Cells;
 
 namespace Figure
 {
+    [RequireComponent(typeof(CookieStorage), typeof(CellDetector), typeof(MeshRenderer))]
     public class TeleporterFigure : MonoBehaviour
     {
         [SerializeField] private List<ParticleSystem> _effects;
@@ -84,7 +85,7 @@ namespace Figure
             _cellDetector.SetColor(Color);
         }
 
-        public void SetStatusInstall() =>
+        public void MarkAsNotInstalled() =>
             IsInstall = false;
 
         public void DisableDetector() =>
@@ -154,7 +155,7 @@ namespace Figure
 
             yield return _wait;
 
-            if (_storage.ISHoldersFilled())
+            if (_storage.AreAllHoldersFilled())
                 Remove();
             else
                 _soundError.Play();

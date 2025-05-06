@@ -15,13 +15,13 @@ namespace Game
         protected override void OnEnable()
         {
             base.OnEnable();
-            _inputDetector.EscPressed += OnButtonClick;
+            _inputDetector.TabPressed += OnButtonClick;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
-            _inputDetector.EscPressed -= OnButtonClick;
+            _inputDetector.TabPressed -= OnButtonClick;
         }
 
         protected override void OnButtonClick()

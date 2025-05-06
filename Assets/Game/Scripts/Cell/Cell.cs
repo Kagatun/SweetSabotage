@@ -1,8 +1,10 @@
 using System;
+using Figure;
 using UnityEngine;
 
 namespace Cells
 {
+    [RequireComponent(typeof(MeshRenderer))]
     public class Cell : MonoBehaviour
     {
         private MeshRenderer _render;
@@ -30,10 +32,9 @@ namespace Cells
 
         public void ResetColor()
         {
-            if (IsRequired == false)
-                _render.material.color = _startColor;
-            else
-                _render.material.color = _startRequiredColor;
+            _render.material.color = IsRequired
+                ? _startRequiredColor
+                : _startColor;
         }
 
         public void SetRequired() =>
@@ -41,11 +42,11 @@ namespace Cells
 
         public void ResetRequired()
         {
-            if (IsRequired)
-            {
-                IsRequired = false;
-                Counted?.Invoke();
-            }
+            if (IsRequired == false)
+                return;
+
+            IsRequired = false;
+            Counted?.Invoke();
         }
 
         public void Reserve() =>

@@ -6407,12 +6407,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionButton: {fileID: 4209250580092143159}
-  _offsetFigureHorizontal: {fileID: 3430451022389389072}
-  _offsetFigureVertical: {fileID: 5293407925036295469}
-  _offsetPaintLeftHorizontal: {fileID: 3175060520619975473}
-  _offsetPaintLeftVertical: {fileID: 8106693529859609064}
-  _offsetPaintRightHorizontal: {fileID: 4549122725105393254}
-  _offsetPaintRightVertical: {fileID: 4842389859432330635}
+  _sliders:
+  - SaveField: 0
+    Slider: {fileID: 3430451022389389072}
+    DefaultValue: -2.5
+    InvertDefault: 0
+  - SaveField: 1
+    Slider: {fileID: 5293407925036295469}
+    DefaultValue: 0.8
+    InvertDefault: 0
+  - SaveField: 2
+    Slider: {fileID: 3175060520619975473}
+    DefaultValue: 3.5
+    InvertDefault: 0
+  - SaveField: 3
+    Slider: {fileID: 8106693529859609064}
+    DefaultValue: -3.5
+    InvertDefault: 0
+  - SaveField: 4
+    Slider: {fileID: 4549122725105393254}
+    DefaultValue: -3.5
+    InvertDefault: 1
+  - SaveField: 5
+    Slider: {fileID: 4842389859432330635}
+    DefaultValue: -3.5
+    InvertDefault: 0
 --- !u!1001 &19040490890808107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9467,6 +9486,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1913076982240644681}
     m_Modifications:
+    - target: {fileID: 549638451900432192, guid: 902873d8e7f02a944a5479293e913613, type: 3}
+      propertyPath: m_MaxValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549638451900432192, guid: 902873d8e7f02a944a5479293e913613, type: 3}
+      propertyPath: m_MinValue
+      value: -3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 753611885051850362, guid: 902873d8e7f02a944a5479293e913613, type: 3}
       propertyPath: _music
       value: 
@@ -9483,6 +9510,14 @@ PrefabInstance:
       propertyPath: _adapterBetweenScenes
       value: 
       objectReference: {fileID: 6698945489298656551}
+    - target: {fileID: 3752598521811573539, guid: 902873d8e7f02a944a5479293e913613, type: 3}
+      propertyPath: m_MaxValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752598521811573539, guid: 902873d8e7f02a944a5479293e913613, type: 3}
+      propertyPath: m_MinValue
+      value: -3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4464642892697333498, guid: 902873d8e7f02a944a5479293e913613, type: 3}
       propertyPath: _panelClose
       value: 
@@ -9571,9 +9606,25 @@ PrefabInstance:
       propertyPath: _adapterBetweenScenes
       value: 
       objectReference: {fileID: 6698945489298656551}
+    - target: {fileID: 7530931248469567994, guid: 902873d8e7f02a944a5479293e913613, type: 3}
+      propertyPath: m_MaxValue
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530931248469567994, guid: 902873d8e7f02a944a5479293e913613, type: 3}
+      propertyPath: m_MinValue
+      value: -3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8760797618434764738, guid: 902873d8e7f02a944a5479293e913613, type: 3}
       propertyPath: m_Name
       value: PanelPause
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913346786455786669, guid: 902873d8e7f02a944a5479293e913613, type: 3}
+      propertyPath: m_MaxValue
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913346786455786669, guid: 902873d8e7f02a944a5479293e913613, type: 3}
+      propertyPath: m_MinValue
+      value: -3.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 141082238745508941, guid: 902873d8e7f02a944a5479293e913613, type: 3}

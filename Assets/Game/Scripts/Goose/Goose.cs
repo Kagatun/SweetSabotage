@@ -5,6 +5,7 @@ using Common;
 
 namespace Bird
 {
+    [RequireComponent(typeof(Mover), typeof(AnimationsGoose))]
     public class Goose : MonoBehaviour
     {
         [SerializeField] private SkinnedMeshRenderer _render;

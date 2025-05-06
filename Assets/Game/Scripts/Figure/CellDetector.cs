@@ -35,19 +35,19 @@ namespace Figure
                 Transform point = _checkerPoints[i];
                 Cell closestCell = FindClosestCell(point.position);
 
-                if (closestCell != null)
-                {
-                    float distanceSquared = (point.position - closestCell.transform.position).sqrMagnitude;
+                if (closestCell == null)
+                    continue;
 
-                    if (distanceSquared <= _detectionRadius)
-                    {
-                        if (closestCell.IsBusy == false && !occupiedCells.Contains(closestCell))
-                        {
-                            closestCell.SetColor(_color);
-                            _detectedCells.Add(closestCell);
-                            occupiedCells.Add(closestCell);
-                        }
-                    }
+                float distanceSquared = (point.position - closestCell.transform.position).sqrMagnitude;
+
+                if (distanceSquared > _detectionRadius)
+                    continue;
+
+                if (closestCell.IsBusy == false && !occupiedCells.Contains(closestCell))
+                {
+                    closestCell.SetColor(_color);
+                    _detectedCells.Add(closestCell);
+                    occupiedCells.Add(closestCell);
                 }
             }
 

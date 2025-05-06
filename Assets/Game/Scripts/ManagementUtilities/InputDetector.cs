@@ -6,68 +6,43 @@ namespace ManagementUtilities
 {
     public class InputDetector : MonoBehaviour
     {
+        protected IInputHandler _inputHandler;
+        private bool _isTabPressed;
+
         public event Action LeftMouseButtonPressed;
         public event Action LeftMouseButtonReleased;
         public event Action SecondTouchPressed;
-        public event Action SecondTouchReleased;
-        public event Action EscPressed;
+        public event Action TabPressed;
 
-        public bool IsActive { get; private set; } = true;
-        public bool IsEscPressed { get; private set; }
+        public bool IsActive { get; set; } = true;
+
+        private void Start()
+        {
+            _inputHandler = YandexGame.savesData.IsDesktop ? new DesktopInputHandler() : new MobileInputHandler();
+
+            _inputHandler.LeftMouseButtonPressed += () =>
+                LeftMouseButtonPressed?.Invoke();
+            _inputHandler.LeftMouseButtonReleased += () =>
+                LeftMouseButtonReleased?.Invoke();
+            _inputHandler.SecondTouchPressed += () =>
+                SecondTouchPressed?.Invoke();
+        }
 
         private void Update()
         {
-            if (IsEscPressed == false)
-            {
-                if (YandexGame.savesData.IsDesktop)
-                {
-                    if (Input.GetMouseButtonDown(0))
-                        LeftMouseButtonPressed?.Invoke();
-
-                    if (Input.GetMouseButtonUp(0))
-                        LeftMouseButtonReleased?.Invoke();
-
-                    if (Input.GetMouseButtonDown(1))
-                        SecondTouchPressed?.Invoke();
-                }
-                else
-                {
-                    if (Input.touchCount > 0)
-                    {
-                        Touch touch = Input.GetTouch(0);
-
-                        if (touch.phase == TouchPhase.Began)
-                            LeftMouseButtonPressed?.Invoke();
-
-                        if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
-                            LeftMouseButtonReleased?.Invoke();
-
-                        if (Input.touchCount > 1)
-                        {
-                            Touch secondTouch = Input.GetTouch(1);
-
-                            if (secondTouch.phase == TouchPhase.Began)
-                                SecondTouchPressed?.Invoke();
-
-                            if (secondTouch.phase == TouchPhase.Ended || secondTouch.phase == TouchPhase.Canceled)
-                                SecondTouchReleased?.Invoke();
-                        }
-                    }
-                }
-            }
-
-            if (IsActive)
-            {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                    EscPressed?.Invoke();
-            }
+            if (_isTabPressed == false)
+                _inputHandler.Update();
+            
+            if (Input.GetKeyDown(KeyCode.Tab))
+                if (IsActive)
+                    TabPressed?.Invoke();
         }
 
         public void SetStatusPressed() =>
-            IsEscPressed = true;
+            _isTabPressed = true;
 
         public void SetStatusNotPressed() =>
-            IsEscPressed = false;
+            _isTabPressed = false;
 
         public void SetActivity() =>
             IsActive = true;

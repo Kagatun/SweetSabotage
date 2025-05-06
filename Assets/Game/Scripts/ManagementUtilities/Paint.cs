@@ -7,7 +7,7 @@ using Utility;
 
 namespace ManagementUtilities
 {
-    public class Paint : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
+    public class Paint : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
     {
         [SerializeField] private InputDetector _inputDetector;
         [SerializeField] private Image _imageColor;
@@ -28,12 +28,12 @@ namespace ManagementUtilities
         private float _offsetX;
         private float _offsetY;
         private float _radius = 0.35f;
+        private float _radiusMobile = 0.5f;
 
         private Vector3 _offsetPosition;
 
         private bool _isFound = true;
         private bool _isReady = true;
-        private bool _isPainting = false;
         private bool _isCooldownActive;
 
         private Color _color;
@@ -46,11 +46,8 @@ namespace ManagementUtilities
             _timeCooldown -= YandexGame.savesData.CooldownPaint;
             _mainCamera = Camera.main;
 
-            if (YandexGame.savesData.IsDesktop == false)
-            {
-                float radiusMobile = 0.5f;
-                _radius = radiusMobile;
-            }
+            if (_isMobile)
+                _radius = _radiusMobile;
 
             SetNewColor();
             ColorStartCooldown();
@@ -65,7 +62,6 @@ namespace ManagementUtilities
         private void OnDisable()
         {
             _inputDetector.SecondTouchPressed -= OnSecondTouchPressed;
-
             ResetCursor();
         }
 
@@ -79,36 +75,40 @@ namespace ManagementUtilities
                 if (_elapsedTime >= _timeCooldown)
                     CompleteCooldown();
             }
-
-            if (_isPainting && Input.GetMouseButton(0))
-                PerformSphereCast();
         }
-
+        
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (eventData.button == PointerEventData.InputButton.Left)
+            if (eventData.button == PointerEventData.InputButton.Left && _isReady)
             {
-                if (_isReady)
-                {
-                    int divider = 2;
-                    Vector2 hotSpot = new Vector2(_cursor.width / divider, _cursor.height / divider);
-                    Cursor.SetCursor(_cursor, hotSpot, CursorMode.Auto);
-                    _isPainting = true;
-                }
+                int divider = 2;
+                Vector2 hotSpot = new Vector2(_cursor.width / divider, _cursor.height / divider);
+                Cursor.SetCursor(_cursor, hotSpot, CursorMode.Auto);
+                
+                SetOffsetPosition();
+                ActiveCursorMobile();
+                
+                PerformSphereCast(eventData.position);
             }
-            else if (eventData.button == PointerEventData.InputButton.Right)
+            else if (eventData.button == PointerEventData.InputButton.Right && _isReady)
             {
-                if (_isReady)
-                    StartCooldown();
+                StartCooldown();
             }
         }
-
+        
+        public void OnDrag(PointerEventData eventData)
+        {
+            if (!_isReady) return;
+            
+            ActiveCursorMobile();
+            PerformSphereCast(eventData.position);
+        }
+        
         public void OnPointerUp(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 ResetCursor();
-                _isPainting = false;
                 _cursorRoller.gameObject.SetActive(false);
 
                 if (_currentFigure != null)
@@ -127,19 +127,7 @@ namespace ManagementUtilities
                 _currentFigure = null;
             }
         }
-
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            if (_isReady == false || _isPainting)
-                return;
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            if (_isReady == false || _isPainting)
-                return;
-        }
-
+        
         private void ColorStartCooldown()
         {
             if (_isReady && _isFound)
@@ -164,26 +152,22 @@ namespace ManagementUtilities
 
         private void ActiveCursorMobile()
         {
-            _cursorRoller.gameObject.SetActive(_isMobile && _isPainting);
+            _cursorRoller.gameObject.SetActive(_isMobile);
 
-            if (_isMobile && _isPainting && Input.touchCount > 0)
+            if (_isMobile && Input.touchCount > 0)
             {
                 Vector3 inputPosition = Input.GetTouch(0).position;
-                Vector3 worldPosition = _mainCamera.ScreenToWorldPoint(
-                    new Vector3(inputPosition.x, inputPosition.y, _mainCamera.nearClipPlane + 0.5f));
+                Vector3 worldPosition = _mainCamera.ScreenToWorldPoint(new Vector3(inputPosition.x, inputPosition.y, _mainCamera.nearClipPlane + _radiusMobile));
 
                 _cursorRoller.transform.position = worldPosition + _offsetPosition;
             }
         }
 
-        private void PerformSphereCast()
+        private void PerformSphereCast(Vector2 screenPosition)
         {
-            SetOffsetPosition();
-            ActiveCursorMobile();
+            Vector3 inputPosition = _isMobile ? (Vector3)Input.GetTouch(0).position : (Vector3)screenPosition;
 
-            Vector3 inputPosition = YandexGame.savesData.IsDesktop ? Input.mousePosition : (Vector3)Input.GetTouch(0).position;
-
-            if (_isMobile && _isPainting)
+            if (_isMobile)
             {
                 Vector3 worldPosition = _mainCamera.ScreenToWorldPoint(
                     new Vector3(inputPosition.x, inputPosition.y, _mainCamera.nearClipPlane + 0.5f));
@@ -199,7 +183,6 @@ namespace ManagementUtilities
             }
 
             Ray ray = _mainCamera.ScreenPointToRay(screenPoint);
-
             RaycastHit hit;
 
             if (Physics.SphereCast(ray, _radius, out hit, Mathf.Infinity, _interactionLayerMask))
@@ -303,3 +286,4 @@ namespace ManagementUtilities
         }
     }
 }
+

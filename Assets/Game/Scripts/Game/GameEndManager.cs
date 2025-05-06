@@ -94,8 +94,7 @@ namespace Game
 
         private IEnumerator StartEnablePanel(Image panel)
         {
-            _inputDetector.SetStatusPressed();
-            _inputDetector.SetBlockInput();
+            _inputDetector.enabled = false;
             _timeline.StopTimer();
             DeleteGeese();
 
