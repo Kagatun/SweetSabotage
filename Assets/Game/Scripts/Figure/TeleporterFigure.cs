@@ -155,7 +155,7 @@ namespace Figure
 
             yield return _wait;
 
-            if (_storage.AreAllHoldersFilled())
+            if (_storage.ValidateAllHoldersAreFilled())
                 Remove();
             else
                 _soundError.Play();

@@ -22,7 +22,7 @@ namespace Figure
             return null;
         }
 
-        public bool AreAllHoldersFilled()
+        public bool ValidateAllHoldersAreFilled()
         {
             foreach (var cookieHolder in _cookieHolders)
             {

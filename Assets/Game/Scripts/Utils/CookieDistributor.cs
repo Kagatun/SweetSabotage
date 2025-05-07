@@ -112,7 +112,7 @@ namespace Utility
                 var figure = _figuresToRemove[i];
                 var storage = figure.CookieStorage;
 
-                if (storage.AreAllHoldersFilled() == false)
+                if (storage.ValidateAllHoldersAreFilled() == false)
                 {
                     _figuresToRemove.RemoveAt(i);
                 }
@@ -128,17 +128,17 @@ namespace Utility
                 var figure = _figures[i];
                 var storage = figure.CookieStorage;
 
-                if (storage.AreAllHoldersFilled() && _figuresToRemove.Contains(figure) == false && _figuresInRemoval.Contains(figure) == false)
+                if (storage.ValidateAllHoldersAreFilled() && _figuresToRemove.Contains(figure) == false && _figuresInRemoval.Contains(figure) == false)
                 {
                     _figuresToRemove.Add(figure);
                 }
 
-                if (storage.AreAllHoldersFilled() == false && _figuresInRemoval.Contains(figure))
+                if (storage.ValidateAllHoldersAreFilled() == false && _figuresInRemoval.Contains(figure))
                 {
                     _figuresInRemoval.Remove(figure);
                 }
 
-                if (storage.AreAllHoldersFilled() == false)
+                if (storage.ValidateAllHoldersAreFilled() == false)
                 {
                     DistributeCookiesForFigure(figure, cookies, cookiesToRemove);
                 }
