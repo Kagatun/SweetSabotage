@@ -11,7 +11,7 @@ namespace ManagementUtilities
 
         private Camera _mainCamera;
         private TeleporterFigure _figure;
-        private bool _isDragging = false;
+        private bool _isDragging;
         private float _radius = 0.5f;
         private float _offsetX;
         private float _offsetY = 1;
@@ -80,65 +80,67 @@ namespace ManagementUtilities
 
             int layerMask = ~LayerMask.GetMask("Default", "Goose", "Cookie", "Figure");
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
-            {
-                if (_figure != null && _figure.IsInstall == false)
-                {
-                    Vector3 newPosition = hit.point + _offsetFly + _offsetPosition;
-                    newPosition.y = _offsetY;
-                    _figure.transform.position = newPosition;
-                    _inputDetector.SetBlockInput();
-                }
-            }
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) == false)
+                return;
+
+            if (_figure == null || _figure.IsInstall)
+                return;
+            
+            Vector3 newPosition = hit.point + _offsetFly + _offsetPosition;
+            newPosition.y = _offsetY;
+            _figure.transform.position = newPosition;
+            _inputDetector.SetBlockInput();
         }
 
         private void OnStartDrag()
         {
             SetOffsetPosition();
 
-            Vector3 inputPosition = YandexGame.savesData.IsDesktop ? (Vector3)Input.mousePosition : (Vector3)Input.GetTouch(0).position;
+            Vector3 inputPosition = YandexGame.savesData.IsDesktop
+                ? (Vector3)Input.mousePosition
+                : (Vector3)Input.GetTouch(0).position;
             Ray ray = _mainCamera.ScreenPointToRay(inputPosition);
             RaycastHit hit;
 
-            if (Physics.SphereCast(ray, _radius, out hit, Mathf.Infinity, _layerMask))
-            {
-                if (hit.transform.TryGetComponent(out TeleporterFigure figure))
-                {
-                    if (figure.IsInstall == false)
-                    {
-                        _figure = figure;
-                        _isDragging = true;
-                        _figure.SetStandardSize();
-                        _figure.EnableDetector();
-                        _offsetFly = _figure.transform.position - hit.point;
+            if (Physics.SphereCast(ray, _radius, out hit, Mathf.Infinity, _layerMask) == false)
+                return;
 
-                        if (YandexGame.savesData.IsDesktop)
-                            Cursor.visible = false;
-                    }
-                }
-            }
+            if (hit.transform.TryGetComponent(out TeleporterFigure figure) == false)
+                return;
+
+            if (figure.IsInstall) 
+                return;
+            
+            _figure = figure;
+            _isDragging = true;
+            _figure.SetStandardSize();
+            _figure.EnableDetector();
+            _offsetFly = _figure.transform.position - hit.point;
+
+            if (YandexGame.savesData.IsDesktop)
+                Cursor.visible = false;
         }
 
         private void OnEndDrag()
         {
-            if (_isDragging && _figure != null)
+            if (!_isDragging || _figure == null)
+                return;
+            
+            _figure.InstallPanelInCells();
+
+            if (_figure.IsInstall == false && _figure != null)
             {
-                _figure.InstallPanelInCells();
-
-                if (_figure.IsInstall == false && _figure != null)
-                {
-                    _figure.SetSmallSize();
-                    _figure.ResetPosition();
-                }
-
-                _isDragging = false;
-                _figure.DisableDetector();
-                _figure = null;
-                _inputDetector.SetActivity();
-
-                if (YandexGame.savesData.IsDesktop)
-                    Cursor.visible = true;
+                _figure.SetSmallSize();
+                _figure.ResetPosition();
             }
+
+            _isDragging = false;
+            _figure.DisableDetector();
+            _figure = null;
+            _inputDetector.SetActivity();
+
+            if (YandexGame.savesData.IsDesktop)
+                Cursor.visible = true;
         }
 
         private void OnRotateFigure()

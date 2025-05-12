@@ -7,16 +7,22 @@ namespace InterfaceUI
     {
         [SerializeField] protected Button ActionButton;
 
-        protected virtual void OnEnable()
+        private void OnEnable()
         {
             ActionButton.onClick.AddListener(OnButtonClick);
+            OnEnableAction();
         }
 
-        protected virtual void OnDisable()
+        private void OnDisable()
         {
             ActionButton.onClick.RemoveListener(OnButtonClick);
+            OnDisableAction();
         }
-
+        
         protected abstract void OnButtonClick();
+        
+        protected abstract void OnEnableAction();
+        
+        protected abstract void OnDisableAction();
     }
 }

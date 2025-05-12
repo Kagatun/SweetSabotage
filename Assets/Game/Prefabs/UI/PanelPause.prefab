@@ -7653,9 +7653,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7676413435862848187, guid: 21c9391d1777b42658aeb2b9cba06399, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2949431998868632900}
-    - targetCorrespondingSourceObject: {fileID: 7676413435862848187, guid: 21c9391d1777b42658aeb2b9cba06399, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4092807362565262172}
   m_SourcePrefab: {fileID: 100100000, guid: 21c9391d1777b42658aeb2b9cba06399, type: 3}
 --- !u!114 &3882464430103741140 stripped
@@ -7674,23 +7671,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7676413435862848187, guid: 21c9391d1777b42658aeb2b9cba06399, type: 3}
   m_PrefabInstance: {fileID: 6875115972203139181}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2949431998868632900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3882464430103741142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7214b126449d9cc4d8e60f0f41129353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActionButton: {fileID: 4092807362565262172}
-  _panelOpen: {fileID: 0}
-  _panelClose: {fileID: 0}
-  _inputDetector: {fileID: 0}
-  _music: {fileID: 0}
 --- !u!114 &4092807362565262172
 MonoBehaviour:
   m_ObjectHideFlags: 0

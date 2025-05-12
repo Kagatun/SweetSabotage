@@ -21,14 +21,12 @@ namespace ManagementUtilities
 
         private Camera _mainCamera;
         private TeleporterFigure _currentFigure;
-        private Texture2D _defaultCursorTexture;
+        private IControllerPaint _controller;
 
         private float _timeCooldown = 10;
         private float _elapsedTime;
         private float _offsetX;
         private float _offsetY;
-        private float _radius = 0.35f;
-        private float _radiusMobile = 0.5f;
 
         private Vector3 _offsetPosition;
 
@@ -39,77 +37,73 @@ namespace ManagementUtilities
         private Color _color;
         private Color _originalColor;
 
-        private bool _isMobile => YandexGame.savesData.IsDesktop == false;
-
         private void Start()
         {
             _timeCooldown -= YandexGame.savesData.CooldownPaint;
             _mainCamera = Camera.main;
 
-            if (_isMobile)
-                _radius = _radiusMobile;
-
             SetNewColor();
-            ColorStartCooldown();
+            DefineController();
             SetOffsetPosition();
+            ColorStartCooldown();
         }
 
-        private void OnEnable()
+        private void DefineController()
         {
-            _inputDetector.SecondTouchPressed += OnSecondTouchPressed;
+            if (YandexGame.savesData.IsDesktop)
+            {
+                _controller = new ControllerPaintDesktop(_cursor);
+            }
+            else
+            {
+                _controller = new ControllerPaintMobile(_mainCamera, _cursorRoller, _button);
+                _inputDetector.SecondTouchPressed += OnSecondTouchPressed;
+            }
         }
-
-        private void OnDisable()
-        {
-            _inputDetector.SecondTouchPressed -= OnSecondTouchPressed;
-            ResetCursor();
-        }
-
+                
         private void Update()
         {
-            if (_isCooldownActive)
-            {
-                _elapsedTime += Time.deltaTime;
-                _fill.fillAmount = _elapsedTime / _timeCooldown;
+            if (_isCooldownActive == false)
+                return;
 
-                if (_elapsedTime >= _timeCooldown)
-                    CompleteCooldown();
-            }
+            _elapsedTime += Time.deltaTime;
+            _fill.fillAmount = _elapsedTime / _timeCooldown;
+
+            if (_elapsedTime >= _timeCooldown)
+                CompleteCooldown();
         }
-        
+
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (eventData.button == PointerEventData.InputButton.Left && _isReady)
+            if (_isReady == false)
+                return;
+
+            if (eventData.button == PointerEventData.InputButton.Left)
             {
-                int divider = 2;
-                Vector2 hotSpot = new Vector2(_cursor.width / divider, _cursor.height / divider);
-                Cursor.SetCursor(_cursor, hotSpot, CursorMode.Auto);
-                
                 SetOffsetPosition();
-                ActiveCursorMobile();
-                
+                _controller.ActivateCursor(eventData.position);
                 PerformSphereCast(eventData.position);
             }
-            else if (eventData.button == PointerEventData.InputButton.Right && _isReady)
+            else if (eventData.button == PointerEventData.InputButton.Right)
             {
                 StartCooldown();
             }
         }
-        
+
         public void OnDrag(PointerEventData eventData)
         {
-            if (!_isReady) return;
-            
-            ActiveCursorMobile();
+            if (!_isReady)
+                return;
+
+            _controller.DragCursor(eventData.position,_offsetPosition);
             PerformSphereCast(eventData.position);
         }
-        
+
         public void OnPointerUp(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Left)
             {
-                ResetCursor();
-                _cursorRoller.gameObject.SetActive(false);
+                _controller.DeactivateCursor();
 
                 if (_currentFigure != null)
                 {
@@ -127,7 +121,7 @@ namespace ManagementUtilities
                 _currentFigure = null;
             }
         }
-        
+
         private void ColorStartCooldown()
         {
             if (_isReady && _isFound)
@@ -149,65 +143,37 @@ namespace ManagementUtilities
 
             _offsetPosition = new Vector3(_offsetX, _offsetY, 0);
         }
-
-        private void ActiveCursorMobile()
+        
+        private void PerformSphereCast(Vector3 screenPosition)
         {
-            _cursorRoller.gameObject.SetActive(_isMobile);
-
-            if (_isMobile && Input.touchCount > 0)
-            {
-                Vector3 inputPosition = Input.GetTouch(0).position;
-                Vector3 worldPosition = _mainCamera.ScreenToWorldPoint(new Vector3(inputPosition.x, inputPosition.y, _mainCamera.nearClipPlane + _radiusMobile));
-
-                _cursorRoller.transform.position = worldPosition + _offsetPosition;
-            }
-        }
-
-        private void PerformSphereCast(Vector2 screenPosition)
-        {
-            Vector3 inputPosition = _isMobile ? (Vector3)Input.GetTouch(0).position : (Vector3)screenPosition;
-
-            if (_isMobile)
-            {
-                Vector3 worldPosition = _mainCamera.ScreenToWorldPoint(
-                    new Vector3(inputPosition.x, inputPosition.y, _mainCamera.nearClipPlane + 0.5f));
-                _cursorRoller.transform.position = worldPosition + _offsetPosition;
-            }
-
-            Vector3 screenPoint = new Vector3(inputPosition.x, inputPosition.y, _mainCamera.nearClipPlane);
-
-            if (_isMobile)
-            {
-                Vector3 offsetScreen = _mainCamera.WorldToScreenPoint(_mainCamera.ScreenToWorldPoint(screenPoint) + _offsetPosition) - screenPoint;
-                screenPoint += offsetScreen;
-            }
+          Vector3 screenPoint = _controller.DragCursor(screenPosition, _offsetPosition);
 
             Ray ray = _mainCamera.ScreenPointToRay(screenPoint);
             RaycastHit hit;
 
-            if (Physics.SphereCast(ray, _radius, out hit, Mathf.Infinity, _interactionLayerMask))
+            if (Physics.SphereCast(ray, _controller.GuidanceRadius, out hit, Mathf.Infinity, _interactionLayerMask))
             {
-                if (hit.transform.TryGetComponent(out TeleporterFigure figure) && figure.IsInstall == false)
+                if (hit.transform.TryGetComponent(out TeleporterFigure figure) && figure.IsInstall)
+                    return;
+
+                if (_currentFigure != figure)
                 {
-                    if (_currentFigure != figure)
-                    {
-                        if (_currentFigure != null)
-                            _currentFigure.SetColor(_originalColor);
+                    if (_currentFigure != null)
+                        _currentFigure.SetColor(_originalColor);
 
-                        _currentFigure = figure;
-                        _originalColor = figure.Color;
-                    }
-
-                    figure.SetColor(_color);
+                    _currentFigure = figure;
+                    _originalColor = figure.Color;
                 }
+
+                figure.SetColor(_color);
             }
             else
             {
-                if (_currentFigure != null)
-                {
-                    _currentFigure.SetColor(_originalColor);
-                    _currentFigure = null;
-                }
+                if (_currentFigure == null)
+                    return;
+
+                _currentFigure.SetColor(_originalColor);
+                _currentFigure = null;
             }
         }
 
@@ -222,6 +188,8 @@ namespace ManagementUtilities
 
             _elapsedTime = 0;
             _isCooldownActive = true;
+
+            _controller.DeactivateCursor();
         }
 
         private void CompleteCooldown()
@@ -234,8 +202,7 @@ namespace ManagementUtilities
             do
             {
                 SetNewColor();
-            }
-            while (_color == previousColor);
+            } while (_color == previousColor);
 
             _imageColor.gameObject.SetActive(true);
 
@@ -244,46 +211,15 @@ namespace ManagementUtilities
             _imageColor.color = color;
         }
 
-        private void ResetCursor() =>
-            Cursor.SetCursor(_defaultCursorTexture ?? null, Vector2.zero, CursorMode.Auto);
-
         private void OnSecondTouchPressed()
         {
             if (_isReady == false)
                 return;
 
-            if (IsSecondTouchOnButton())
-            {
-                SetNewColor();
-                _imageColor.gameObject.SetActive(true);
-                _imageColor.color = _color;
+            if (_controller.IsSecondTouchOnButton() == false)
+                return;
 
-                StartCooldown();
-            }
-        }
-
-        private bool IsSecondTouchOnButton()
-        {
-            if (Input.touchCount > 1)
-            {
-                Touch secondTouch = Input.GetTouch(1);
-                Vector2 touchPosition = secondTouch.position;
-
-                PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
-                pointerEventData.position = touchPosition;
-
-                var results = new System.Collections.Generic.List<RaycastResult>();
-                EventSystem.current.RaycastAll(pointerEventData, results);
-
-                foreach (var result in results)
-                {
-                    if (result.gameObject == _button.gameObject)
-                        return true;
-                }
-            }
-
-            return false;
+            StartCooldown();
         }
     }
 }
-

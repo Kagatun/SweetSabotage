@@ -24,6 +24,7 @@ namespace ManagementUtilities
                 if (Input.touchCount > 1)
                 {
                     Touch secondTouch = Input.GetTouch(1);
+                    
                     if (secondTouch.phase == TouchPhase.Began)
                         SecondTouchPressed?.Invoke();
                 }

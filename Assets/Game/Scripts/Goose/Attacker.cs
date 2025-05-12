@@ -8,27 +8,31 @@ namespace Bird
 {
     public class Attacker
     {
+        private GooseConfig _config;
         private AnimationsGoose _animations;
         private FigureDetector _figureDetector;
         private Mover _mover;
         private CookieHolder _targetForTurn;
 
         private float _attackDistance;
-        private float _timeWait = 0.5f;
-        private float _timeRemove = 0.4f;
+        private float _timeWait;
+        private float _timeRemove;
         private WaitForSeconds _wait;
         private WaitForSeconds _waitRemove;
         private Coroutine _attackCoroutine;
 
         public event Action Hited;
 
-        public Attacker(float attackDistance, AnimationsGoose animations, FigureDetector figureDetector, Mover mover)
+        public Attacker(float attackDistance, AnimationsGoose animations, FigureDetector figureDetector, Mover mover, GooseConfig config)
         {
             _attackDistance = attackDistance;
             _animations = animations;
             _figureDetector = figureDetector;
             _mover = mover;
-
+            _config = config;
+            _timeWait = _config.TimeWait;
+            _timeRemove = _config.TimeRemove;
+            
             _wait = new WaitForSeconds(_timeWait);
             _waitRemove = new WaitForSeconds(_timeRemove);
         }

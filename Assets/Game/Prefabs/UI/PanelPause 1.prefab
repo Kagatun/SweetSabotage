@@ -3930,12 +3930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionButton: {fileID: 9149460325299293436}
-  _offsetFigureHorizontal: {fileID: 7712488780030307803}
-  _offsetFigureVertical: {fileID: 1001730817674178534}
-  _offsetPaintLeftHorizontal: {fileID: 7530931248469567994}
-  _offsetPaintLeftVertical: {fileID: 3752598521811573539}
-  _offsetPaintRightHorizontal: {fileID: 8913346786455786669}
-  _offsetPaintRightVertical: {fileID: 549638451900432192}
+  _sliders: []
 --- !u!1 &6654199130456368983
 GameObject:
   m_ObjectHideFlags: 0
@@ -6973,9 +6968,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7676413435862848187, guid: 21c9391d1777b42658aeb2b9cba06399, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 753611885051850362}
-    - targetCorrespondingSourceObject: {fileID: 7676413435862848187, guid: 21c9391d1777b42658aeb2b9cba06399, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6440419813292151516}
   m_SourcePrefab: {fileID: 100100000, guid: 21c9391d1777b42658aeb2b9cba06399, type: 3}
 --- !u!224 &6334137596494520436 stripped
@@ -6988,23 +6980,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7676413435862848187, guid: 21c9391d1777b42658aeb2b9cba06399, type: 3}
   m_PrefabInstance: {fileID: 4426890878696862414}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &753611885051850362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6334137596494520437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7214b126449d9cc4d8e60f0f41129353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActionButton: {fileID: 6440419813292151516}
-  _panelOpen: {fileID: 0}
-  _panelClose: {fileID: 5123950253861996305}
-  _inputDetector: {fileID: 0}
-  _music: {fileID: 0}
 --- !u!114 &6440419813292151516
 MonoBehaviour:
   m_ObjectHideFlags: 0

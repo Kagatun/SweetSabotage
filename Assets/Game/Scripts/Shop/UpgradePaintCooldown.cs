@@ -12,5 +12,9 @@ namespace Shop
             base.UpdateIndex();
             YandexGame.savesData.CooldownPaint++;
         }
+        
+        protected override void OnEnableAction(){}
+        
+        protected override void OnDisableAction(){}
     }
 }

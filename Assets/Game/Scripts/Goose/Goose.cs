@@ -13,6 +13,7 @@ namespace Bird
         [SerializeField] private float _attackDistance = 1.7f;
         [SerializeField] private AudioSource _soundBite;
         [SerializeField] private ParticleSystem _effectRemove;
+        [SerializeField] private GooseConfig _config;
 
         private List<Transform> _movePoints = new List<Transform>();
         private ColorInitializer _colorInitializer;
@@ -23,11 +24,11 @@ namespace Bird
         private Stunner _stunner;
 
         private IPoolAdder<Goose> _poolAdder;
-        private int _currentIndex = 0;
+        private int _currentIndex;
+        private int _correctionNumber = 1;
         private bool _isMovingForward = true;
 
         public Attacker Attacker => _attacker;
-        public Color Color => _colorInitializer.Color;
 
         private void Awake()
         {
@@ -36,8 +37,8 @@ namespace Bird
             _animations = GetComponent<AnimationsGoose>();
 
             _startPositionCalculator = new StartPositionCalculator();
-            _attacker = new Attacker(_attackDistance, _animations, _figureDetector, _mover);
-            _stunner = new Stunner(_mover, _animations);
+            _attacker = new Attacker(_attackDistance, _animations, _figureDetector, _mover, _config);
+            _stunner = new Stunner(_mover, _animations, _config);
         }
 
         private void OnEnable()
@@ -58,7 +59,7 @@ namespace Bird
 
         public void Remove()
         {
-            Instantiate(_effectRemove, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            Instantiate(_effectRemove, transform.position + new Vector3(0, _correctionNumber, 0), Quaternion.identity);
             _poolAdder.AddToPool(this);
         }
 
@@ -93,16 +94,16 @@ namespace Bird
 
         private void OnFigureRemoved(TeleporterFigure figure)
         {
-            if (_attacker.CurrentFigure == figure)
-            {
-                _attacker.StopAttack();
+            if (_attacker.CurrentFigure != figure) 
+                return;
+            
+            _attacker.StopAttack();
 
-                if (_stunner.IsStunned == false)
-                {
-                    _mover.GoToTarget(_movePoints[_currentIndex]);
-                    _animations.TriggerRun();
-                }
-            }
+            if (_stunner.IsStunned) 
+                return;
+            
+            _mover.GoToTarget(_movePoints[_currentIndex]);
+            _animations.TriggerRun();
         }
 
         private void PlaySoundAttack()
@@ -115,7 +116,7 @@ namespace Bird
 
         private void OnSetNextTarget()
         {
-            _attacker.Attack(Color, transform, () => { MoveToNextPoint(); });
+            _attacker.Attack(_colorInitializer.Color, transform, () => { MoveToNextPoint(); });
         }
 
         public void ApplySpeedBoost(int speedBoost, float duration)
@@ -133,9 +134,9 @@ namespace Bird
         private void MoveToNextPoint()
         {
             if (_isMovingForward)
-                _currentIndex = (_currentIndex + 1) % _movePoints.Count;
+                _currentIndex = (_currentIndex + _correctionNumber) % _movePoints.Count;
             else
-                _currentIndex = (_currentIndex - 1 + _movePoints.Count) % _movePoints.Count;
+                _currentIndex = (_currentIndex - _correctionNumber + _movePoints.Count) % _movePoints.Count;
 
             _mover.GoToTarget(_movePoints[_currentIndex]);
         }

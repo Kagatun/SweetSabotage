@@ -12,5 +12,9 @@ namespace Shop
             base.UpdateIndex();
             YandexGame.savesData.ChanceRemoveTime++;
         }
+
+        protected override void OnEnableAction(){}
+        
+        protected override void OnDisableAction(){}
     }
 }

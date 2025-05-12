@@ -15,18 +15,14 @@ public class YandexSliderController : ButtonHandler
             LoadSettings();
     }
 
-    protected override void OnEnable()
+    protected override void OnEnableAction()
     {
-        base.OnEnable();
-
         foreach (var slider in _sliders)
             slider.Slider.onValueChanged.AddListener(value => SaveValue(slider.SaveField.ToString(), value));
     }
 
-    protected override void OnDisable()
+    protected override void OnDisableAction()
     {
-        base.OnDisable();
-
         foreach (var slider in _sliders)
             slider.Slider.onValueChanged.RemoveAllListeners();
     }

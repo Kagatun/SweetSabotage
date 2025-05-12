@@ -29,7 +29,7 @@ namespace YG
         public int ExtraCharge;
 
         public int IndexLanguage;
-        public int LevelIndex = 41;
+        public int LevelIndex = 1;
 
         public float MasterVolume = 1f;
         public float MusicVolume = 1f;

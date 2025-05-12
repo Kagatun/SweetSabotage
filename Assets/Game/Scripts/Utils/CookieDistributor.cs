@@ -20,6 +20,10 @@ namespace Utility
 
         private List<Cookie> _cookies = new List<Cookie>();
         private TeleporterFigure _currentFigure;
+        
+        private int _minChance;
+        private int _maxChance = 100;
+        private int _multiplier = 7;
 
         public event Action<int> Counted;
 
@@ -78,11 +82,8 @@ namespace Utility
 
         private void RemoveTime(TeleporterFigure figure)
         {
-            int minChance = 0;
-            int maxChance = 100;
-            int multiplier = 7;
-            int currentChance = YandexGame.savesData.ChanceRemoveTime * multiplier;
-            int chance = UnityEngine.Random.Range(minChance, maxChance);
+            int currentChance = YandexGame.savesData.ChanceRemoveTime * _multiplier;
+            int chance = UnityEngine.Random.Range(_minChance, _maxChance);
 
             if (chance < currentChance)
             {
@@ -152,17 +153,17 @@ namespace Utility
                 if (cookiesToRemove.Contains(cookie))
                     continue;
 
-                if (cookie.Color == figure.Color)
-                {
-                    var freePoint = figure.CookieStorage.GetFreePoint();
+                if (cookie.Color != figure.Color) 
+                    continue;
+                
+                var freePoint = figure.CookieStorage.GetFreePoint();
 
-                    if (freePoint != null)
-                    {
-                        freePoint.Reserve();
-                        cookie.SetTarget(freePoint);
-                        cookiesToRemove.Add(cookie);
-                    }
-                }
+                if (freePoint == null)
+                    continue;
+                
+                freePoint.Reserve();
+                cookie.SetTarget(freePoint);
+                cookiesToRemove.Add(cookie);
             }
         }
 

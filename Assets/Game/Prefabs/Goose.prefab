@@ -129,6 +129,7 @@ MonoBehaviour:
   _attackDistance: 1.7
   _soundBite: {fileID: 143626208903467307}
   _effectRemove: {fileID: 19800004, guid: 9a11d672c46ec404e9f5cefad3c1102e, type: 3}
+  _config: {fileID: 11400000, guid: 3609cb46063be6b4cbfd33b27d745a2d, type: 2}
 --- !u!114 &-6880339847638464147
 MonoBehaviour:
   m_ObjectHideFlags: 0

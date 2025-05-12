@@ -8,20 +8,22 @@ namespace Bird
 {
     public class Stunner
     {
+        private GooseConfig _config;
         private Mover _mover;
         private AnimationsGoose _animations;
-        private float _stun = 5;
+        private float _stun;
         private WaitForSeconds _stunTime;
         private Coroutine _stunCoroutine;
-
-        public Stunner(Mover mover, AnimationsGoose animations)
+        
+        public Stunner(Mover mover, AnimationsGoose animations, GooseConfig config)
         {
-            int multiplier = 2;
-            int extraTime = YandexGame.savesData.ExtraStun * multiplier;
-            _stun += extraTime;
+            _config = config;
+            int extraTime = YandexGame.savesData.ExtraStun * _config.MultiplierStun;
             _mover = mover;
             _animations = animations;
-
+            
+            _stun = _config.Stun;
+            _stun += extraTime;
             _stunTime = new WaitForSeconds(_stun);
         }
 

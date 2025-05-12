@@ -22,22 +22,6 @@ namespace Game
                 ActionButton.gameObject.SetActive(false);
         }
 
-        protected override void OnEnable()
-        {
-            base.OnEnable();
-
-            YandexGame.RewardVideoEvent += OnAddGold;
-            _cookieDistributor.Counted += OnCounted;
-        }
-
-        protected override void OnDisable()
-        {
-            base.OnDisable();
-
-            YandexGame.RewardVideoEvent -= OnAddGold;
-            _cookieDistributor.Counted -= OnCounted;
-        }
-
         public void ShowGold()
         {
             AddBonusGold();
@@ -46,7 +30,19 @@ namespace Game
             YandexGame.savesData.Gold += _gold;
             YandexGame.SaveProgress();
         }
+        
+        protected override void OnEnableAction()
+        {
+            YandexGame.RewardVideoEvent += OnAddGold;
+            _cookieDistributor.Counted += OnCounted;
+        }
 
+        protected override void OnDisableAction()
+        {
+            YandexGame.RewardVideoEvent -= OnAddGold;
+            _cookieDistributor.Counted -= OnCounted;
+        }
+        
         protected override void OnButtonClick()
         {
             ActionButton.gameObject.SetActive(false);

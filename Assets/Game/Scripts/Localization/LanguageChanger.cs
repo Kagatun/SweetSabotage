@@ -16,5 +16,9 @@ namespace Localization
             YandexGame.savesData.IndexLanguage = _indexLanguage;
             YandexGame.SaveProgress();
         }
+
+        protected override void OnEnableAction(){}
+        
+        protected override void OnDisableAction(){}
     }
 }

@@ -5,17 +5,15 @@ namespace Boost
 {
     public abstract class BoostCell : MonoBehaviour
     {
-        private int _minNumber = 0;
-        private int _maxNumber = 100;
-        private int _percent = 10;
+       [SerializeField] protected BoostConfig Config;
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.TryGetComponent(out Goose goose))
             {
-                int random = Random.Range(_minNumber, _maxNumber);
+                int random = Random.Range(Config.MinNumber, Config.MaxNumber);
 
-                if (random <= _percent)
+                if (random <= Config.Percent)
                     ApplyBoost(goose);
             }
         }

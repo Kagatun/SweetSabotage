@@ -14,5 +14,9 @@ namespace InterfaceUI
             Time.timeScale = 1;
             _adapterBetweenScenes.LoadExitScene(_indexLevel);
         }
+        
+        protected override void OnEnableAction(){}
+        
+        protected override void OnDisableAction(){}
     }
 }

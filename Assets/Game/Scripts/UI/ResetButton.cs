@@ -8,5 +8,9 @@ namespace InterfaceUI
         {
             YandexGame.ResetSaveProgress();
         }
+        
+        protected override void OnEnableAction(){}
+        
+        protected override void OnDisableAction(){}
     }
 }

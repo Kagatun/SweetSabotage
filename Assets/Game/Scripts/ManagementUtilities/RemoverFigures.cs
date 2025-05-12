@@ -39,23 +39,25 @@ namespace ManagementUtilities
 
         private void RemoveFigure()
         {
-            Vector3 inputPosition = YandexGame.savesData.IsDesktop ? (Vector3)Input.mousePosition : (Vector3)Input.GetTouch(1).position;
+            Vector3 inputPosition = YandexGame.savesData.IsDesktop
+                ? (Vector3)Input.mousePosition
+                : (Vector3)Input.GetTouch(1).position;
             Ray ray = _mainCamera.ScreenPointToRay(inputPosition);
             RaycastHit hit;
 
-            if (Physics.SphereCast(ray, _radius, out hit, Mathf.Infinity, _layerMask))
-            {
-                if (hit.transform.TryGetComponent(out TeleporterFigure figure))
-                {
-                    if (figure.IsInstall == false && _inputDetector.IsActive)
-                    {
-                        figure.Use();
-                        figure.Remove();
-                        _soundRemove.Play();
-                        Fined?.Invoke(figure.Color);
-                    }
-                }
-            }
+            if (Physics.SphereCast(ray, _radius, out hit, Mathf.Infinity, _layerMask) == false)
+                return;
+
+            if (hit.transform.TryGetComponent(out TeleporterFigure figure) == false)
+                return;
+
+            if (figure.IsInstall || _inputDetector.IsActive == false)
+                return;
+
+            figure.Use();
+            figure.Remove();
+            _soundRemove.Play();
+            Fined?.Invoke(figure.Color);
         }
     }
 }

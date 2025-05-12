@@ -11,5 +11,9 @@ namespace Timer
         {
             Clicked?.Invoke();
         }
+        
+        protected override void OnEnableAction(){}
+        
+        protected override void OnDisableAction(){}
     }
 }

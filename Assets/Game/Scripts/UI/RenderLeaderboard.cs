@@ -10,5 +10,9 @@ namespace InterfaceUI
         {
             _dropdownPanel.SetActive(!_dropdownPanel.activeSelf);
         }
+        
+        protected override void OnEnableAction(){}
+        
+        protected override void OnDisableAction(){}
     }
 }

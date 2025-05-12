@@ -13,7 +13,7 @@ namespace Spawner
         private List<T> _allObjects;
         private List<T> _inactiveObjects;
 
-        private void Awake()
+        private void Start()
         {
             _allObjects = new List<T>();
             _inactiveObjects = new List<T>();

@@ -23,20 +23,16 @@ namespace Shop
                 OnDisableObjects();
         }
 
-        protected override void OnEnable()
+        protected override void OnEnableAction()
         {
-            base.OnEnable();
-
             YandexGame.GetDataEvent += OnDisableObjects;
             YandexGame.PurchaseSuccessEvent += OnPurchaseSuccess;
             YandexGame.RewardVideoEvent += OnSetReward;
             YandexGame.ConsumePurchases();
         }
 
-        protected override void OnDisable()
+        protected override void OnDisableAction()
         {
-            base.OnDisable();
-
             YandexGame.GetDataEvent -= OnDisableObjects;
             YandexGame.PurchaseSuccessEvent -= OnPurchaseSuccess;
             YandexGame.RewardVideoEvent -= OnSetReward;

@@ -60,6 +60,37 @@ namespace Spawner
             CreateBrokenCells();
             CreateRequiredCells();
         }
+        
+        public List<Cell> GetValidCells()
+        {
+            return new List<Cell>(_cells);
+        }
+
+        public List<Transform> GetMoveTransforms()
+        {
+            List<Transform> orderedTransforms = new List<Transform>(_emptyCellTransforms);
+            Vector3 center = Vector3.zero;
+
+            foreach (var transform in orderedTransforms)
+                center += transform.position;
+
+            center /= orderedTransforms.Count;
+
+            orderedTransforms.Sort((transformA, transformB) =>
+            {
+                float angleA = Mathf.Atan2(transformA.position.z - center.z, transformA.position.x - center.x);
+                float angleB = Mathf.Atan2(transformB.position.z - center.z, transformB.position.x - center.x);
+
+                return angleA.CompareTo(angleB);
+            });
+
+            return orderedTransforms;
+        }
+
+        public List<Transform> GetCornerTransforms()
+        {
+            return new List<Transform>(_cornerTransforms);
+        }
 
         private void CreateBrokenCells()
         {
@@ -140,37 +171,6 @@ namespace Spawner
             Destroy(cell.GetComponent<Rigidbody>());
             Destroy(cell.GetComponent<Cell>());
             Destroy(cell.GetComponent<MeshRenderer>());
-        }
-
-        public List<Cell> GetValidCells()
-        {
-            return new List<Cell>(_cells);
-        }
-
-        public List<Transform> GetMoveTransforms()
-        {
-            List<Transform> orderedTransforms = new List<Transform>(_emptyCellTransforms);
-            Vector3 center = Vector3.zero;
-
-            foreach (var transform in orderedTransforms)
-                center += transform.position;
-
-            center /= orderedTransforms.Count;
-
-            orderedTransforms.Sort((transformA, transformB) =>
-            {
-                float angleA = Mathf.Atan2(transformA.position.z - center.z, transformA.position.x - center.x);
-                float angleB = Mathf.Atan2(transformB.position.z - center.z, transformB.position.x - center.x);
-
-                return angleA.CompareTo(angleB);
-            });
-
-            return orderedTransforms;
-        }
-
-        public List<Transform> GetCornerTransforms()
-        {
-            return new List<Transform>(_cornerTransforms);
         }
 
         private Vector3 CalculateCenterOfMass(List<Cell> cells)
