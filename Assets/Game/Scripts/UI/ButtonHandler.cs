@@ -20,9 +20,13 @@ namespace InterfaceUI
         }
         
         protected abstract void OnButtonClick();
+
+        protected virtual void OnEnableAction()
+        {
+        }
         
-        protected abstract void OnEnableAction();
-        
-        protected abstract void OnDisableAction();
+        protected virtual void OnDisableAction()
+        {
+        }
     }
 }

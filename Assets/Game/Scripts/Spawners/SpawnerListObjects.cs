@@ -4,7 +4,8 @@ using UnityEngine.Pool;
 
 namespace Spawner
 {
-    public abstract class SpawnerListObjects<T> : MonoBehaviour, IPoolAdder<T> where T : MonoBehaviour
+    public abstract class SpawnerListObjects<T> : MonoBehaviour, IPoolAdder<T>
+        where T : MonoBehaviour
     {
         [SerializeField] private List<T> _prefabs;
         [SerializeField] private List<int> _numbers;

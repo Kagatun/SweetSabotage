@@ -25,7 +25,8 @@ namespace ManagementUtilities
 
         public void DeactivateCursor() =>
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-        
-        public bool IsSecondTouchOnButton() {return false;}
+
+        public bool IsSecondTouchOnButton() =>
+            false;
     }
 }

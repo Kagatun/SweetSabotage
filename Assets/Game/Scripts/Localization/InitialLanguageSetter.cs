@@ -1,22 +1,22 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
-using System.Collections;
 using YG;
 
 namespace Localization
 {
     public class InitialLanguageSetter : MonoBehaviour
     {
-        const string Russia = "ru";
-        const string USA = "en";
-        const string China = "zh";
-        const string France = "fr";
-        const string Germany = "de";
-        const string India = "hi";
-        const string Japan = "ja";
-        const string Korea = "ko";
-        const string Brazil = "pt";
-        const string Turkey = "tr";
+       private const string Russia = "ru";
+       private const string USA = "en";
+       private const string China = "zh";
+       private const string France = "fr";
+       private const string Germany = "de";
+       private const string India = "hi";
+       private const string Japan = "ja";
+       private const string Korea = "ko";
+       private const string Brazil = "pt";
+       private const string Turkey = "tr";
 
         private bool _isLocalizationReady = false;
         private bool _isYandexDataReady = false;

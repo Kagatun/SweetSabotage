@@ -4,14 +4,6 @@ namespace Bird
 {
     public class AnimationsGoose : MonoBehaviour
     {
-        private static class AnimationParams
-        {
-            public static readonly int Run = Animator.StringToHash("Run");
-            public static readonly int Run2 = Animator.StringToHash("Run2");
-            public static readonly int Hit = Animator.StringToHash("Hit");
-            public static readonly int Stun = Animator.StringToHash("Stun");
-        }
-
         [SerializeField] private Animator _animator;
 
         public void TriggerRun() =>
@@ -25,5 +17,13 @@ namespace Bird
 
         public void TriggerAttack() =>
             _animator.SetTrigger(AnimationParams.Hit);
+
+        private static class AnimationParams
+        {
+            public static readonly int Run = Animator.StringToHash("Run");
+            public static readonly int Run2 = Animator.StringToHash("Run2");
+            public static readonly int Hit = Animator.StringToHash("Hit");
+            public static readonly int Stun = Animator.StringToHash("Stun");
+        }
     }
 }

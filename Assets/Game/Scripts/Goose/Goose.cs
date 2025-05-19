@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using UnityEngine;
-using Figure;
 using Common;
+using Figure;
+using UnityEngine;
 
 namespace Bird
 {

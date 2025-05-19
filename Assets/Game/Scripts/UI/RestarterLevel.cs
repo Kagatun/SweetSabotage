@@ -11,9 +11,5 @@ namespace InterfaceUI
             Time.timeScale = 1;
             _adapterBetweenScenes.RestartLevel();
         }
-        
-        protected override void OnEnableAction(){}
-        
-        protected override void OnDisableAction(){}
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
-using Figure;
 using Common;
+using Figure;
 using UnityEngine;
 
 namespace Bird
@@ -21,8 +21,6 @@ namespace Bird
         private WaitForSeconds _waitRemove;
         private Coroutine _attackCoroutine;
 
-        public event Action Hited;
-
         public Attacker(float attackDistance, AnimationsGoose animations, FigureDetector figureDetector, Mover mover, GooseConfig config)
         {
             _attackDistance = attackDistance;
@@ -37,6 +35,8 @@ namespace Bird
             _waitRemove = new WaitForSeconds(_timeRemove);
         }
 
+        public event Action Hited;
+        
         public TeleporterFigure CurrentFigure { get; private set; }
 
         public void Attack(Color color, Transform goose, Action onAttackComplete)

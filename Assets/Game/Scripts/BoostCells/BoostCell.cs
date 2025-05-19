@@ -5,7 +5,7 @@ namespace Boost
 {
     public abstract class BoostCell : MonoBehaviour
     {
-       [SerializeField] protected BoostConfig Config;
+        [SerializeField] protected BoostConfig Config;
 
         private void OnTriggerEnter(Collider other)
         {

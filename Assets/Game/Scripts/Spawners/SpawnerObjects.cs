@@ -3,7 +3,8 @@ using UnityEngine.Pool;
 
 namespace Spawner
 {
-    public abstract class SpawnerObjects<T> : MonoBehaviour, IPoolAdder<T> where T : MonoBehaviour
+    public abstract class SpawnerObjects<T> : MonoBehaviour, IPoolAdder<T>
+        where T : MonoBehaviour
     {
         [SerializeField] private T _prefabs;
 
@@ -21,7 +22,7 @@ namespace Spawner
             _pool.Get();
 
         protected virtual T CreateObject() =>
-             Instantiate(_prefabs);
+            Instantiate(_prefabs);
 
         protected virtual void OnGet(T obj) =>
             obj.gameObject.SetActive(true);

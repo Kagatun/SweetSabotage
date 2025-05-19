@@ -1,7 +1,7 @@
-using ManagementUtilities;
-using Spawner;
 using System.Collections;
 using System.Collections.Generic;
+using ManagementUtilities;
+using Spawner;
 using Timer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,7 +28,7 @@ namespace Game
         [SerializeField] private GoldCounter _goldCounter;
 
         private WaitForSeconds _wait;
-        float _time = 3;
+        private float _time = 3;
         private bool _isEnd;
 
         private void Awake()
@@ -54,7 +54,7 @@ namespace Game
 
             if (_isEnd == false)
             {
-                if (_cellCounter.gameObject.activeSelf == false || _cellCounter.gameObject.activeSelf && _cellCounter.IsCountComplete)
+                if (_cellCounter.gameObject.activeSelf == false || (_cellCounter.gameObject.activeSelf && _cellCounter.IsCountComplete))
                 {
                     _musicVictory.Play();
                     OpenNextLevel();

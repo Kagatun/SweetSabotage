@@ -1,5 +1,5 @@
-using Spawner;
 using System.Collections.Generic;
+using Spawner;
 using Timer;
 using UnityEngine;
 using Utility;
@@ -37,7 +37,6 @@ namespace Game
                 _spawnersGeese[i].CreateGeese();
                 _colorPenalty.SetGeese(_spawnersGeese[i].GetGeese());
             }
-
 
             for (int i = 0; i < _gridGenerators.Count; i++)
                 _spawnerTeleportFigures.FillCells(_gridGenerators[i].GetValidCells());

@@ -1,6 +1,6 @@
+using System.Collections.Generic;
 using Cells;
 using Figure;
-using System.Collections.Generic;
 using UnityEngine;
 using Utility;
 

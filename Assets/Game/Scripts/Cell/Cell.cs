@@ -1,5 +1,4 @@
 using System;
-using Figure;
 using UnityEngine;
 
 namespace Cells

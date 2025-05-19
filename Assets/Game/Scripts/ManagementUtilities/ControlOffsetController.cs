@@ -1,91 +1,73 @@
-using UnityEngine;
-using UnityEngine.UI;
-using YG;
-using System;
 using System.Collections.Generic;
 using InterfaceUI;
+using UnityEngine;
+using YG;
 
-public class YandexSliderController : ButtonHandler
+namespace ManagementUtilities
 {
-    [SerializeField] private List<YandexSlider> _sliders = new List<YandexSlider>();
-
-    private void Start()
+    public class ControlOffsetController : ButtonHandler
     {
-        if (YandexGame.SDKEnabled)
-            LoadSettings();
-    }
+        [SerializeField] private List<YandexSlider> _sliders = new List<YandexSlider>();
 
-    protected override void OnEnableAction()
-    {
-        foreach (var slider in _sliders)
-            slider.Slider.onValueChanged.AddListener(value => SaveValue(slider.SaveField.ToString(), value));
-    }
-
-    protected override void OnDisableAction()
-    {
-        foreach (var slider in _sliders)
-            slider.Slider.onValueChanged.RemoveAllListeners();
-    }
-
-    private void SaveValue(string fieldName, float value)
-    {
-        if (YandexGame.savesData == null)
-            return;
-
-        var field = typeof(SavesYG).GetField(fieldName);
-
-        if (field != null && field.FieldType == typeof(float))
+        private void Start()
         {
-            field.SetValue(YandexGame.savesData, value);
-            YandexGame.SaveProgress();
+            if (YandexGame.SDKEnabled)
+                LoadSettings();
         }
-    }
 
-    private void LoadSettings()
-    {
-        if (YandexGame.savesData == null)
-            return;
-
-        foreach (var slider in _sliders)
+        protected override void OnEnableAction()
         {
-            if (slider.Slider == null)
-                continue;
+            foreach (var slider in _sliders)
+                slider.Slider.onValueChanged.AddListener(value => SaveValue(slider.SaveField.ToString(), value));
+        }
 
-            var field = typeof(SavesYG).GetField(slider.SaveField.ToString());
+        protected override void OnDisableAction()
+        {
+            foreach (var slider in _sliders)
+                slider.Slider.onValueChanged.RemoveAllListeners();
+        }
+
+        private void SaveValue(string fieldName, float value)
+        {
+            if (YandexGame.savesData == null)
+                return;
+
+            var field = typeof(SavesYG).GetField(fieldName);
 
             if (field != null && field.FieldType == typeof(float))
-                slider.Slider.value = (float)field.GetValue(YandexGame.savesData);
+            {
+                field.SetValue(YandexGame.savesData, value);
+                YandexGame.SaveProgress();
+            }
         }
-    }
 
-    protected override void OnButtonClick()
-    {
-        foreach (var slider in _sliders)
+        private void LoadSettings()
         {
-            if (slider.Slider == null)
-                continue;
+            if (YandexGame.savesData == null)
+                return;
 
-            slider.Slider.value = slider.DefaultValue;
-            SaveValue(slider.SaveField.ToString(), slider.DefaultValue);
+            foreach (var slider in _sliders)
+            {
+                if (slider.Slider == null)
+                    continue;
+
+                var field = typeof(SavesYG).GetField(slider.SaveField.ToString());
+
+                if (field != null && field.FieldType == typeof(float))
+                    slider.Slider.value = (float)field.GetValue(YandexGame.savesData);
+            }
+        }
+
+        protected override void OnButtonClick()
+        {
+            foreach (var slider in _sliders)
+            {
+                if (slider.Slider == null)
+                    continue;
+
+                slider.Slider.value = slider.DefaultValue;
+                SaveValue(slider.SaveField.ToString(), slider.DefaultValue);
+            }
         }
     }
-}
-
-[Serializable]
-public class YandexSlider
-{
-    public YandexSaveField SaveField;
-    public Slider Slider;
-    public float DefaultValue;
-    public bool InvertDefault;
-}
-
-public enum YandexSaveField
-{
-    OffsetFigureHorizontal,
-    OffsetFigureVertical,
-    OffsetPaintLeftHorizontal,
-    OffsetPaintLeftVertical,
-    OffsetPaintRightHorizontal,
-    OffsetPaintRightVertical
 }

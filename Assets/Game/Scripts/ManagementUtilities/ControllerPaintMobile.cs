@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace ManagementUtilities
 {
@@ -66,10 +66,7 @@ namespace ManagementUtilities
         
         private void UpdateMobileCursorPosition(Vector2 screenPosition, Vector3 offsetPosition)
         {
-            Vector3 worldPosition = _camera.ScreenToWorldPoint(
-                new Vector3(screenPosition.x, screenPosition.y,
-                    _camera.nearClipPlane + GuidanceRadius));
-
+            Vector3 worldPosition = _camera.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, _camera.nearClipPlane + GuidanceRadius));
             _cursorRoller.transform.position = worldPosition + offsetPosition;
         }
     }

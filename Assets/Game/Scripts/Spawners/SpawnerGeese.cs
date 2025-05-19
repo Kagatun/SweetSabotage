@@ -1,5 +1,5 @@
-using Bird;
 using System.Collections.Generic;
+using Bird;
 using UnityEngine;
 using Utility;
 
@@ -60,7 +60,8 @@ namespace Spawner
             do
             {
                 color = ColorPalette.GetRandomActiveColor();
-            } while (_usedColors.Contains(color));
+            }
+            while (_usedColors.Contains(color));
 
             _usedColors.Add(color);
 

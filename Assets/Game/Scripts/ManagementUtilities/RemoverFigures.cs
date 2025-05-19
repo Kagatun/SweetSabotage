@@ -1,5 +1,5 @@
-using Figure;
 using System;
+using Figure;
 using UnityEngine;
 using YG;
 

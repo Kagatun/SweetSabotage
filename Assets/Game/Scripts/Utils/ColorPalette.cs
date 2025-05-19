@@ -1,36 +1,36 @@
-using Spawner;
 using System.Collections.Generic;
+using Spawner;
 using UnityEngine;
 
 namespace Utility
 {
     public class ColorPalette : MonoBehaviour
     {
+        private static List<Color> s_activeColors;
+
+        public static IReadOnlyList<Color> ActiveColors => s_activeColors;
+        
         [SerializeField] private List<ColorData> _colorData;
-
-        private static List<Color> _activeColors;
-
-        public static IReadOnlyList<Color> ActiveColors => _activeColors;
-
+        
         private void Awake()
         {
-            _activeColors = new List<Color>();
+            s_activeColors = new List<Color>();
 
             foreach (var colorData in _colorData)
             {
                 if (colorData.IsActive)
-                    _activeColors.Add(colorData.Color);
+                    s_activeColors.Add(colorData.Color);
             }
         }
 
         public static int GetActiveColorsCount() =>
-            _activeColors.Count;
+            s_activeColors.Count;
 
         public static Color GetRandomActiveColor()
         {
-            int randomIndex = Random.Range(0, _activeColors.Count);
+            int randomIndex = Random.Range(0, s_activeColors.Count);
 
-            return _activeColors[randomIndex];
+            return s_activeColors[randomIndex];
         }
     }
 }

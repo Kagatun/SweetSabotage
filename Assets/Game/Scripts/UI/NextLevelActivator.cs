@@ -11,9 +11,9 @@ namespace InterfaceUI
 
         private void Start()
         {
-            int _indexAdd = 1;
+            int indexAdd = 1;
             int levelIndex = SceneManager.GetActiveScene().buildIndex;
-            _nextLevelIndex = levelIndex + _indexAdd;
+            _nextLevelIndex = levelIndex + indexAdd;
         }
 
         protected override void OnButtonClick()
@@ -21,9 +21,5 @@ namespace InterfaceUI
             Time.timeScale = 1;
             _adapterBetweenScenes.LoadExitScene(_nextLevelIndex);
         }
-        
-        protected override void OnEnableAction(){}
-        
-        protected override void OnDisableAction(){}
     }
 }

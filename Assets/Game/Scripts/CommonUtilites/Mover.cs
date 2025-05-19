@@ -38,7 +38,7 @@ namespace Common
 
             _targetTransform = positionTarget;
 
-            Vector3 direction = (_targetTransform.position - transform.position);
+            Vector3 direction = _targetTransform.position - transform.position;
 
             if (direction.sqrMagnitude > _minDistanceToTargetSqr)
             {

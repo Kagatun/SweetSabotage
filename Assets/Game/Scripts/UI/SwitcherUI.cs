@@ -13,9 +13,5 @@ namespace InterfaceUI
             _panelOpen.gameObject.SetActive(true);
             _panelClose.gameObject.SetActive(false);
         }
-        
-        protected override void OnEnableAction(){}
-        
-        protected override void OnDisableAction(){}
     }
 }

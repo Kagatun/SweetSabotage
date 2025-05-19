@@ -1,9 +1,9 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using YG;
 using Figure;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using Utility;
+using YG;
 
 namespace ManagementUtilities
 {
@@ -60,7 +60,7 @@ namespace ManagementUtilities
                 _inputDetector.SecondTouchPressed += OnSecondTouchPressed;
             }
         }
-                
+
         private void Update()
         {
             if (_isCooldownActive == false)
@@ -95,7 +95,7 @@ namespace ManagementUtilities
             if (!_isReady)
                 return;
 
-            _controller.DragCursor(eventData.position,_offsetPosition);
+            _controller.DragCursor(eventData.position, _offsetPosition);
             PerformSphereCast(eventData.position);
         }
 
@@ -143,10 +143,10 @@ namespace ManagementUtilities
 
             _offsetPosition = new Vector3(_offsetX, _offsetY, 0);
         }
-        
+
         private void PerformSphereCast(Vector3 screenPosition)
         {
-          Vector3 screenPoint = _controller.DragCursor(screenPosition, _offsetPosition);
+            Vector3 screenPoint = _controller.DragCursor(screenPosition, _offsetPosition);
 
             Ray ray = _mainCamera.ScreenPointToRay(screenPoint);
             RaycastHit hit;

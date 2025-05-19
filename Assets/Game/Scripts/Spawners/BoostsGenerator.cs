@@ -1,5 +1,5 @@
-using Boost;
 using System.Collections.Generic;
+using Boost;
 using UnityEngine;
 
 namespace Spawner

@@ -5,16 +5,12 @@ namespace Shop
     public class UpgradePaintCooldown : ImprovementHandler
     {
         protected override int GetIndexBuy() =>
-             YandexGame.savesData.CooldownPaint;
+            YandexGame.savesData.CooldownPaint;
 
         protected override void UpdateIndex()
         {
             base.UpdateIndex();
             YandexGame.savesData.CooldownPaint++;
         }
-        
-        protected override void OnEnableAction(){}
-        
-        protected override void OnDisableAction(){}
     }
 }

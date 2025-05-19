@@ -1,9 +1,9 @@
-using UnityEngine;
-using UnityEngine.UI;
 using Figure;
-using YG;
 using ManagementUtilities;
 using Timer;
+using UnityEngine;
+using UnityEngine.UI;
+using YG;
 
 namespace Game
 {
@@ -139,7 +139,6 @@ namespace Game
             SwitchPanelByDeviceType(_imageHintRemoveInfo, _imageHintRemoveInfoMobile, true);
 
             _removerFigures.Fined -= EnableThirdHint;
-
         }
 
         private void EnableFourthHint()
