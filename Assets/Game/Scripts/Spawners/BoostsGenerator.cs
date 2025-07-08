@@ -14,8 +14,10 @@ namespace Spawner
         public void SetSpawnPoints(List<Transform> spawnPoints) =>
             _spawnPoints.AddRange(spawnPoints);
 
-        public void InstallBoosts()
+        public void InstallBoosts(int count)
         {
+            _count = count;
+            
             int boostsToSpawn = Mathf.Min(_count, _spawnPoints.Count);
             float offsetY = 0.51f;
 

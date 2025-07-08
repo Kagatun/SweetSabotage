@@ -66,6 +66,9 @@ namespace Timer
         public void RemoveTime(int value = 1) =>
             _currentTime = Math.Clamp(_currentTime - value, 0, _time);
 
+        public void SetTime(int value) =>
+            _time = value;
+        
         public void StartTimer() =>
             _isTimerRunning = true;
 

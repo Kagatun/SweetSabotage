@@ -84,6 +84,9 @@ namespace Spawner
             _currentFigureCount++;
         }
 
+        public void SetParameters() =>
+            _colorTracker.SetParameters();
+
         public void FillCells(List<Cell> cells) =>
             _cells.AddRange(cells);
 

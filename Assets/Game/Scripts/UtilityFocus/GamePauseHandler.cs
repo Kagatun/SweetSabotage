@@ -7,7 +7,6 @@ namespace UtilityFocus
 {
     public class GamePauseHandler : MonoBehaviour
     {
-        [SerializeField] private List<AudioSource> _music;
         [SerializeField] private Image _imagePause;
 
         private void Start()
@@ -123,14 +122,12 @@ namespace UtilityFocus
 
         private void OnMute()
         {
-            for (int i = 0; i < _music.Count; i++)
-                _music[i].Pause();
+            AudioListener.pause = true;
         }
 
         private void OnPlay()
         {
-            for (int i = 0; i < _music.Count; i++)
-                _music[i].UnPause();
+            AudioListener.pause = false;
         }
     }
 }

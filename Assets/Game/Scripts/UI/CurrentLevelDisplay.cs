@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using YG;
 
 namespace InterfaceUI
 {
@@ -12,7 +12,7 @@ namespace InterfaceUI
 
         private void Start()
         {
-            _level = SceneManager.GetActiveScene().buildIndex;
+            _level = YandexGame.savesData.LevelNumber + 1;
             _text.text = $"{_level}";
         }
     }

@@ -14,51 +14,10 @@ namespace Spawner
         private List<T> _allObjects;
         private List<T> _inactiveObjects;
 
-        private void Start()
+        public void SetCount(List<int> numbers)
         {
-            _allObjects = new List<T>();
-            _inactiveObjects = new List<T>();
-
-            _pool = new ObjectPool<T>(CreateObject, OnGet, OnRelease, OnDestroyObject, false);
-
-            InitializePool();
-        }
-
-        private void InitializePool()
-        {
-            List<T> objectsToAdd = new List<T>();
-
-            for (int j = 0; j < _prefabs.Count; j++)
-            {
-                for (int i = 0; i < _numbers[j]; i++)
-                {
-                    T newObject = CreateSpecificObject(_prefabs[j]);
-                    objectsToAdd.Add(newObject);
-                }
-            }
-
-            Shuffle(objectsToAdd);
-
-            foreach (var obj in objectsToAdd)
-            {
-                _pool.Release(obj);
-                _allObjects.Add(obj);
-                _inactiveObjects.Add(obj);
-            }
-        }
-
-        private T CreateSpecificObject(T prefab) =>
-            Instantiate(prefab);
-
-        private void Shuffle(List<T> list)
-        {
-            for (int i = list.Count - 1; i > 0; i--)
-            {
-                int j = Random.Range(0, i + 1);
-                T temp = list[i];
-                list[i] = list[j];
-                list[j] = temp;
-            }
+            _numbers = new List<int>(numbers);
+            StartInitialize();
         }
 
         public void AddToPool(T obj)
@@ -107,5 +66,52 @@ namespace Spawner
 
         protected virtual void OnDestroyObject(T obj) =>
             Destroy(obj.gameObject);
+        
+        private void StartInitialize()
+        {
+            _allObjects = new List<T>();
+            _inactiveObjects = new List<T>();
+
+            _pool = new ObjectPool<T>(CreateObject, OnGet, OnRelease, OnDestroyObject, false);
+
+            InitializePool();
+        }
+
+        private void InitializePool()
+        {
+            List<T> objectsToAdd = new List<T>();
+
+            for (int j = 0; j < _prefabs.Count; j++)
+            {
+                for (int i = 0; i < _numbers[j]; i++)
+                {
+                    T newObject = CreateSpecificObject(_prefabs[j]);
+                    objectsToAdd.Add(newObject);
+                }
+            }
+
+            Shuffle(objectsToAdd);
+
+            foreach (var obj in objectsToAdd)
+            {
+                _pool.Release(obj);
+                _allObjects.Add(obj);
+                _inactiveObjects.Add(obj);
+            }
+        }
+
+        private T CreateSpecificObject(T prefab) =>
+            Instantiate(prefab);
+
+        private void Shuffle(List<T> list)
+        {
+            for (int i = list.Count - 1; i > 0; i--)
+            {
+                int j = Random.Range(0, i + 1);
+                T temp = list[i];
+                list[i] = list[j];
+                list[j] = temp;
+            }
+        }
     }
 }

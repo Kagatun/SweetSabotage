@@ -4,7 +4,6 @@ using ManagementUtilities;
 using Spawner;
 using Timer;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utility;
 using YG;
@@ -54,7 +53,8 @@ namespace Game
 
             if (_isEnd == false)
             {
-                if (_cellCounter.gameObject.activeSelf == false || (_cellCounter.gameObject.activeSelf && _cellCounter.IsCountComplete))
+                if (_cellCounter.gameObject.activeSelf == false ||
+                    (_cellCounter.gameObject.activeSelf && _cellCounter.IsCountComplete))
                 {
                     _musicVictory.Play();
                     OpenNextLevel();
@@ -77,11 +77,11 @@ namespace Game
 
         private void ActivatePanelDefeat()
         {
-            if (_isEnd == false)
-            {
-                StartCoroutine(StartEnablePanel(_panelDefeat));
-                TurnOffObjects(_musicDefeat);
-            }
+            if (_isEnd)
+                return;
+
+            StartCoroutine(StartEnablePanel(_panelDefeat));
+            TurnOffObjects(_musicDefeat);
         }
 
         private void TurnOffObjects(AudioSource music)
@@ -107,15 +107,10 @@ namespace Game
 
         private void OpenNextLevel()
         {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            int indexOpenLevel = YandexGame.savesData.LevelIndex;
+            if (YandexGame.savesData.LevelNumber + 1 == YandexGame.savesData.LevelIndex)
+                YandexGame.savesData.LevelIndex++;
 
-            if (indexOpenLevel == currentSceneIndex)
-            {
-                indexOpenLevel++;
-                YandexGame.savesData.LevelIndex = indexOpenLevel;
-                YandexGame.SaveProgress();
-            }
+            YandexGame.SaveProgress();
         }
     }
 }

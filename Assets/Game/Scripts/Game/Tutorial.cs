@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Figure;
 using ManagementUtilities;
 using Timer;
@@ -45,11 +46,16 @@ namespace Game
 
         [SerializeField] private Image _imageEnd;
 
+        [SerializeField] private List<GameObject> _gameObjects;
+
         private TeleporterFigure[] _figures;
         private int numberHint;
 
         private void Start()
         {
+            foreach (var _gameObject in _gameObjects)
+                _gameObject.SetActive(false);
+            
             float timeEnableHints = 0.2f;
             Invoke(nameof(EnableGreeting), timeEnableHints);
         }

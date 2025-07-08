@@ -11,7 +11,7 @@ namespace Spawner
         private int _checkAfterCount;
         private int _number = 3;
 
-        private void Start()
+        public void SetParameters()
         {
             _availableColors = new List<Color>(ColorPalette.ActiveColors);
             _checkAfterCount = _availableColors.Count * _number;
@@ -19,6 +19,9 @@ namespace Spawner
 
         public Color GetNextColor()
         {
+            /*_availableColors = new List<Color>(ColorPalette.ActiveColors);
+            _checkAfterCount = _availableColors.Count * _number;*/
+            
             if (_spawnedColorsHistory.Count >= _checkAfterCount)
             {
                 var missingColors = FindMissingColors();

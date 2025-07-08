@@ -12,14 +12,16 @@ namespace Utility
         
         [SerializeField] private List<ColorData> _colorData;
         
-        private void Awake()
+        public void SetParameters(List<bool> activeColors)
         {
             s_activeColors = new List<Color>();
 
-            foreach (var colorData in _colorData)
+            for (int i = 0; _colorData.Count > i; i++)
             {
-                if (colorData.IsActive)
-                    s_activeColors.Add(colorData.Color);
+                _colorData[i].SetStatus(activeColors[i]);
+                
+                if (activeColors[i])
+                    s_activeColors.Add(_colorData[i].Color);
             }
         }
 

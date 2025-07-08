@@ -1,5 +1,5 @@
 {
-    "idSave": 17426,
+    "idSave": 19418,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -12,7 +12,7 @@
     ],
     "Times": [
         0.0,
-        47.52314758300781,
+        7.7475385665893559,
         65.31245422363281,
         39.574649810791019,
         59.75973892211914,
@@ -83,7 +83,7 @@
         0.0,
         0.0
     ],
-    "Gold": 9037,
+    "Gold": 9898,
     "ExtraTime": 0,
     "ExtraStun": 0,
     "CooldownPaint": 0,
@@ -91,7 +91,8 @@
     "ChanceRemoveTime": 0,
     "ExtraCharge": 0,
     "IndexLanguage": 0,
-    "LevelIndex": 22,
+    "LevelIndex": 23,
+    "LevelNumber": 22,
     "MasterVolume": 1.0,
     "MusicVolume": 0.14430315792560578,
     "EffectsVolume": 1.0,

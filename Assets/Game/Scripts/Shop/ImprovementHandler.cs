@@ -17,7 +17,7 @@ namespace Shop
         [SerializeField] private AudioSource _audioBuy;
         [SerializeField] private AudioSource _audioError;
 
-        private List<int> _pricesTool = new List<int> { 500, 1500, 2500, 5000, 10000 };
+        private List<int> _pricesTool = new List<int> { 50, 250, 2500, 5000, 10000 };
         private int _indexSave;
 
         private void Start()
@@ -66,11 +66,11 @@ namespace Shop
 
         private void TurnOffButton()
         {
-            if (_indexSave == _starsLevels.Count)
-            {
-                ActionButton.gameObject.SetActive(false);
-                _priceText.gameObject.SetActive(false);
-            }
+            if (_indexSave != _starsLevels.Count)
+                return;
+
+            ActionButton.gameObject.SetActive(false);
+            _priceText.gameObject.SetActive(false);
         }
 
         private void RenderBuy()

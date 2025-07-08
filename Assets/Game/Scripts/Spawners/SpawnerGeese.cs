@@ -14,9 +14,6 @@ namespace Spawner
         private List<Transform> _movePoints = new List<Transform>();
         private List<Goose> _geese = new List<Goose>();
 
-        public void CreateGeese() =>
-            SpawnGeese();
-
         public void FillSpawnPoints(List<Transform> spawnPoints) =>
             _spawnPoints = spawnPoints;
 
@@ -32,8 +29,10 @@ namespace Spawner
                 _geese[i].Remove();
         }
 
-        private void SpawnGeese()
+        public void SpawnGeese(int countGeese)
         {
+            _countGeese = countGeese;
+            
             int availableColorsCount = ColorPalette.GetActiveColorsCount();
             _countGeese = Mathf.Min(_countGeese, availableColorsCount, _spawnPoints.Count);
 

@@ -10,5 +10,8 @@ namespace Spawner
 
         public Color Color => color;
         public bool IsActive => isActive;
+        
+        public void SetStatus(bool active) =>
+            isActive = active;
     }
 }

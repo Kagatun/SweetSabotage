@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Cells;
+using Game;
 using UnityEngine;
 
 namespace Spawner
@@ -19,6 +20,14 @@ namespace Spawner
 
         private List<Transform> _emptyCellTransforms = new List<Transform>();
         private List<Transform> _cornerTransforms = new List<Transform>();
+
+        public void SetParameters(GridGeneratorSettings settings)
+        {
+            _gridSize = settings.GridSize;
+            _centralPointSpawn.position = settings.StartPositionGridGenerator;
+            _brokenCellsCount = settings.BrokenCellsCount;
+            _requiredCellsCount = settings.RequiredCellsCount;
+        }
 
         public void CreateGrid()
         {
@@ -60,7 +69,7 @@ namespace Spawner
             CreateBrokenCells();
             CreateRequiredCells();
         }
-        
+
         public List<Cell> GetValidCells()
         {
             return new List<Cell>(_cells);

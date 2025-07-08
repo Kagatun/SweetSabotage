@@ -30,6 +30,7 @@ namespace YG
 
         public int IndexLanguage;
         public int LevelIndex = 1;
+        public int LevelNumber;
 
         public float MasterVolume = 1f;
         public float MusicVolume = 1f;

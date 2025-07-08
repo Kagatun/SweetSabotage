@@ -1,4 +1,5 @@
 using UnityEngine;
+using YG;
 
 namespace InterfaceUI
 {
@@ -12,7 +13,17 @@ namespace InterfaceUI
         protected override void OnButtonClick()
         {
             Time.timeScale = 1;
-            _adapterBetweenScenes.LoadExitScene(_indexLevel);
+            
+            if (_indexLevel == 0)
+            {
+                _adapterBetweenScenes.LoadExitScene(0);
+            }
+            else
+            {
+                YandexGame.savesData.LevelNumber = _indexLevel - 1;
+                YandexGame.SaveProgress();
+                _adapterBetweenScenes.LoadExitScene(1);
+            }
         }
     }
 }

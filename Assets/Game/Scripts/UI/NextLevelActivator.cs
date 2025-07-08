@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using YG;
 
 namespace InterfaceUI
 {
@@ -7,19 +7,20 @@ namespace InterfaceUI
     {
         [SerializeField] private AdapterBetweenScenes _adapterBetweenScenes;
 
-        private int _nextLevelIndex;
-
         private void Start()
         {
-            int indexAdd = 1;
-            int levelIndex = SceneManager.GetActiveScene().buildIndex;
-            _nextLevelIndex = levelIndex + indexAdd;
+            int maxLevel = 69;
+            
+            if(YandexGame.savesData.LevelNumber >= maxLevel)
+                gameObject.SetActive(false);
         }
 
         protected override void OnButtonClick()
         {
+            YandexGame.savesData.LevelNumber ++;
+            YandexGame.SaveProgress();
             Time.timeScale = 1;
-            _adapterBetweenScenes.LoadExitScene(_nextLevelIndex);
+            _adapterBetweenScenes.LoadExitScene(1);
         }
     }
 }

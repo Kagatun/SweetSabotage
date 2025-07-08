@@ -14,7 +14,7 @@ namespace Spawner
         private int _currentCookieCount = 0;
         private int _currentSpawnIndex = 0;
         private float _nextSpawnTime;
-        private bool _isSpawning = false;
+        private bool _isSpawning;
 
         private void Start()
         {

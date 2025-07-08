@@ -13,12 +13,13 @@ namespace Game
 
         public event Action Filled;
 
-        private void Awake()
+        public void SetParameters(int maxNumber)
         {
+            _maxNumber = maxNumber;
             _slider.maxValue = _maxNumber;
             _slider.value = 0f;
         }
-
+        
         public void AddScore(int score)
         {
             _slider.value += score;
