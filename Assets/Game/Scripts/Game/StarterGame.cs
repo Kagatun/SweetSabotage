@@ -26,7 +26,7 @@ namespace Game
         [SerializeField] private CellCounter _cellCounter;
         [SerializeField] private AudioSource _music;
 
-        private void Awake()
+        private void Start()
         {
             _colorPalette.SetParameters(_levelGameSettings.LevelSettings.ActiveСolors);
 
@@ -43,7 +43,7 @@ namespace Game
 
             _boostsGenerator.InstallBoosts(_levelGameSettings.LevelSettings.BoostsCount);
 
-            for (int i = 0; i < _levelGameSettings.LevelSettings.GridGeneratorsSettings.Count; i++)
+            for (int i = 0; i < _levelGameSettings.LevelSettings.CountGeese.Count; i++)
             {
                 _spawnersGeese[i].FillSpawnPoints(_gridGenerators[i].GetCornerTransforms());
                 _spawnersGeese[i].FillMovePoints(_gridGenerators[i].GetMoveTransforms());

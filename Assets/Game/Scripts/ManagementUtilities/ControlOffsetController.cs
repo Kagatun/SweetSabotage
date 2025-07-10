@@ -7,7 +7,7 @@ namespace ManagementUtilities
 {
     public class ControlOffsetController : ButtonHandler
     {
-        [SerializeField] private List<YandexSlider> _sliders = new List<YandexSlider>();
+        [SerializeField] private List<YandexSlider> _sliders;
 
         private void Start()
         {

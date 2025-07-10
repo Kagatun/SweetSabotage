@@ -7,9 +7,9 @@ namespace Spawner
     public class BoostsGenerator : MonoBehaviour
     {
         [SerializeField] private List<BoostCell> _boostCells;
-        [SerializeField] private int _count;
 
         private List<Transform> _spawnPoints = new List<Transform>();
+        private int _count;
 
         public void SetSpawnPoints(List<Transform> spawnPoints) =>
             _spawnPoints.AddRange(spawnPoints);
@@ -19,7 +19,7 @@ namespace Spawner
             _count = count;
             
             int boostsToSpawn = Mathf.Min(_count, _spawnPoints.Count);
-            float offsetY = 0.51f;
+            float offsetY = 0.001f;
 
             List<Transform> availableSpawnPoints = new List<Transform>(_spawnPoints);
 

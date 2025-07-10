@@ -19,9 +19,6 @@ namespace Spawner
 
         public Color GetNextColor()
         {
-            /*_availableColors = new List<Color>(ColorPalette.ActiveColors);
-            _checkAfterCount = _availableColors.Count * _number;*/
-            
             if (_spawnedColorsHistory.Count >= _checkAfterCount)
             {
                 var missingColors = FindMissingColors();

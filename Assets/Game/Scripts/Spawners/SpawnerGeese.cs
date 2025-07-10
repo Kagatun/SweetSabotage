@@ -7,8 +7,7 @@ namespace Spawner
 {
     public class SpawnerGeese : SpawnerObjects<Goose>
     {
-        [SerializeField] private int _countGeese;
-
+        private int _countGeese;
         private List<Color> _usedColors = new List<Color>();
         private List<Transform> _spawnPoints = new List<Transform>();
         private List<Transform> _movePoints = new List<Transform>();

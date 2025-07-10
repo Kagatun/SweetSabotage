@@ -7,9 +7,10 @@ namespace Game
     public class ScoreCounter : MonoBehaviour
     {
         [SerializeField] private Slider _slider;
-        [SerializeField] private int _maxNumber;
         [SerializeField] private Image _imageCheck;
         [SerializeField] private Image _imageCubes;
+        
+        private int _maxNumber;
 
         public event Action Filled;
 

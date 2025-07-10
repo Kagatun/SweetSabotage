@@ -7,28 +7,17 @@ namespace Timer
 {
     public class Timeline : MonoBehaviour
     {
-        [SerializeField] private int _time;
         [SerializeField] private Slider _slider;
         [SerializeField] private Image _imageDefeat;
         [SerializeField] private Image _imageTime;
         [SerializeField] private ButtonDecreaseTimer _button;
 
+        private int _time;
         private float _currentTime;
         private bool _isTimerRunning;
         private bool _isSpent;
 
         public event Action Stoped;
-
-        private void Start()
-        {
-            int multiplier = 5;
-            int extraTime = YandexGame.savesData.ExtraTime * multiplier;
-            _time += extraTime;
-
-            _slider.maxValue = _time;
-            _slider.value = 0f;
-            _currentTime = 0f;
-        }
 
         private void OnEnable()
         {
@@ -66,8 +55,12 @@ namespace Timer
         public void RemoveTime(int value = 1) =>
             _currentTime = Math.Clamp(_currentTime - value, 0, _time);
 
-        public void SetTime(int value) =>
+        public void SetTime(int value)
+        {
             _time = value;
+
+            SetStartTime();
+        }
         
         public void StartTimer() =>
             _isTimerRunning = true;
@@ -75,6 +68,17 @@ namespace Timer
         public void StopTimer() =>
             _isTimerRunning = false;
 
+        private void SetStartTime()
+        {
+            int multiplier = 5;
+            int extraTime = YandexGame.savesData.ExtraTime * multiplier;
+            _time += extraTime;
+
+            _slider.maxValue = _time;
+            _slider.value = 0f;
+            _currentTime = 0f;
+        }
+        
         private void CalculateScore()
         {
             if (_slider.value >= _slider.maxValue)
